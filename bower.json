@@ -1,0 +1,46 @@
+{
+  "name": "ng2-web",
+  "version": "1.0.1",
+  "homepage": "https://github.com/microlv/ng2-web",
+  "authors": [
+    "andy.lv <andy.lv@live.com>"
+  ],
+  "description": "angular2js nodejs mongodb",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "angular2js",
+    "angular2.js",
+    "ng2",
+    "nodejs",
+    "node.js",
+    "io",
+    "iojs",
+    "io.js",
+    "mongodb",
+    "mongo",
+    "javascript",
+    "js"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "AdminLTE": "admin-lte#~2.3.0",
+    "bootstrap": "~3.3.5",
+    "es6-module-loader": "~0.17.7",
+    "font-awesome": "~4.4.0",
+    "jquery": "~2.1.4",
+    "jquery-ui": "~1.11.4",
+    "systemjs": "*",
+    "traceur": "~0.0.91",
+    "traceur-runtime": "~0.0.91"
+  }
+}
