@@ -1,18 +1,17 @@
 {
-  "name": "ng2-web",
-  "version": "1.0.1",
-  "homepage": "https://github.com/microlv/ng2-web",
+  "name": "react-web",
+  "version": "0.0.1",
+  "homepage": "https://github.com/microlv/react-web",
   "authors": [
     "andy.lv <andy.lv@live.com>"
   ],
-  "description": "angular2js nodejs mongodb",
+  "description": "react nodejs mongodb",
   "moduleType": [
     "node"
   ],
   "keywords": [
-    "angular2js",
-    "angular2.js",
-    "ng2",
+    "react",
+    "react native.js",
     "nodejs",
     "node.js",
     "io",
@@ -35,12 +34,9 @@
   "dependencies": {
     "AdminLTE": "admin-lte#~2.3.0",
     "bootstrap": "~3.3.5",
-    "es6-module-loader": "~0.17.7",
     "font-awesome": "~4.4.0",
     "jquery": "~2.1.4",
     "jquery-ui": "~1.11.4",
-    "systemjs": "*",
-    "traceur": "~0.0.91",
-    "traceur-runtime": "~0.0.91"
+    "react": "~0.13.3"
   }
 }

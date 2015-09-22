@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular 2 | Log in</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
+    <link rel="shortcut icon" href="images/favicon.ico"/>
+</head>
+<body>
+<login></login>
+<script src="lib/jquery/dist/jquery.min.js"></script>
+<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://github.jspm.io/jmcriffey/bower-traceur-runtime@0.0.87/traceur-runtime.js"></script>
+<script src="https://jspm.io/system@0.16.js"></script>
+<script src="angular2/bundles/angular2.dev.js"></script>
+<script>
+    System.config({
+        baseURL: 'js/admin'
+    });
+    System.import('login');
+</script>
+</body>
+</html>
