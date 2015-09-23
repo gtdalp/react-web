@@ -1,63 +1,65 @@
-/////<reference path="../../angular2/typings/angular2/angular2.d.ts"/>
-//
-//import {
-//  Component,
-//  View,
-//  bootstrap
-//} from "angular2/angular2";
-//
-//import {
-//  Http
-//} from 'angular2/http';
-//
-//@Component({
-//    selector: 'login'
-//})
-//
-//@View({
-//    template: `
-//    <article class="hold-transition login-page">
-//      <div class="login-box">
-//        <div class="login-logo">
-//          <div>angular 2</div>
-//          <div>ng2-web</div>
-//        </div>
-//        <div class="login-box-body">
-//          <p class="login-box-msg">Sign in to start your session</p>
-//
-//          <div class="form-group has-feedback">
-//            <input type="email" class="form-control" #username placeholder="Email">
-//            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-//          </div>
-//          <div class="form-group has-feedback">
-//            <input type="password" class="form-control" #password placeholder="Password">
-//            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-//          </div>
-//          <div class="row">
-//            <div class="col-xs-12">
-//              <button type="submit" (click)="signIn" class="btn btn-primary btn-block btn-flat">Sign In</button>
-//            </div>
-//          </div>
-//        </div>
-//      </div>
-//    </article>
-//		`
-//})
-//
-//class LoginSelector {
-//    http:Http;
-//
-//    constructor() {
-//        this.username = '';
-//        this.password = '';
-//    }
-//
-//    signIn() {
-//        console.log('signIn');
-//        http.get('/api/test').subscribe(response => {
-//            console.log(response);
-//        });
-//    }
-//}
-//
-//bootstrap(LoginSelector);
+(function () {
+  'use strict';
+
+  var LoginSelector = React.createClass({
+    signIn: handleSubmit,
+    render: function () {
+      return (
+        <article className="hold-transition login-page loginSelector">
+          <div className="login-box">
+            <div className="login-logo">
+              react-web
+            </div>
+            <div className="login-box-body">
+              <p className="login-box-msg">Sign in to start your session</p>
+
+              <div className="form-group has-feedback">
+                <input type="email" className="form-control" placeholder="Email" ref="email"/>
+                <span className="glyphicon glyphicon-envelope form-control-feedback"></span>
+              </div>
+
+              <div className="form-group has-feedback">
+                <input type="password" className="form-control" placeholder="Password" ref="password"/>
+                <span className="glyphicon glyphicon-lock form-control-feedback"></span>
+              </div>
+
+              <div className="row">
+                <div className="col-xs-12">
+                  <button onClick={this.signIn} type="submit" className=" btn btn-primary btn-block btn-flat">Sign In
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      );
+    }
+  });
+
+  function handleSubmit() {
+    var author = this.refs.email.getDOMNode().value.trim();
+    var text = this.refs.password.getDOMNode().value.trim();
+    if (!text || !author) {
+      return;
+    }
+    //send to server
+    $.ajax({
+      url: '/api/signIn',
+      dataType: 'json',
+      method: 'POST',
+      success: function (data) {
+        if (data.code === 'OK') {
+          window.location.href = '/ad/admin';
+        }
+      },
+      error: function (xhr, status, err) {
+        console.error(status, err.toString());
+      }
+    });
+  }
+
+  React.render(
+    <LoginSelector />,
+    document.getElementById('login')
+  );
+})();
