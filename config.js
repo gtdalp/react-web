@@ -4,6 +4,8 @@
 
 'use strict';
 
-process.env.release=true;
+//process.env.release = true;
 
-module.exports={};
+module.exports = {
+  dbconnect: 'mongodb://127.0.0.1/react2web'
+};
