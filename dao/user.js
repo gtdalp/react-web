@@ -4,7 +4,7 @@ var User = require('../model').User;
 var q = require('q');
 function signIn(email, password) {
   var d = q.defer();
-  User.findOne({}, function (err, docs) {
+  User.find({email: email, password: password}, function (err, docs) {
     if (err || !docs) {
       console.log(err);
       d.resolve({code: 'fail', msg: err});
