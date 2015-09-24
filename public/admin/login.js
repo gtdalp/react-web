@@ -37,23 +37,15 @@
   });
 
   function handleSubmit() {
-    var author = this.refs.email.getDOMNode().value.trim();
-    var text = this.refs.password.getDOMNode().value.trim();
-    if (!text || !author) {
+    var email = this.refs.email.getDOMNode().value.trim();
+    var password = this.refs.password.getDOMNode().value.trim();
+    if (!password || !email) {
       return;
     }
     //send to server
-    $.ajax({
-      url: '/api/signIn',
-      dataType: 'json',
-      method: 'POST',
-      success: function (data) {
-        if (data.code === 'OK') {
-          window.location.href = '/ad/admin';
-        }
-      },
-      error: function (xhr, status, err) {
-        console.error(status, err.toString());
+    $.post('/api/signIn', {email: email, password: password}, function (data) {
+      if (data.code === 'OK') {
+        window.location.href = '/ad/admin';
       }
     });
   }
