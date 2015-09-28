@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 var config = require('../config');
-var user = require('./user');
+var users = require('./users');
 var topic = require('./topics');
 
 mongoose.connect(process.env.MONGOLAB_URI || config.dbconnect, function (err) {
@@ -10,6 +10,6 @@ mongoose.connect(process.env.MONGOLAB_URI || config.dbconnect, function (err) {
 });
 
 module.exports = {
-  User: mongoose.model('User')
+  Users: mongoose.model('Users')
 //  Topics: mongoose.model('Topics')
 };

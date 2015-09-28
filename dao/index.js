@@ -1,6 +1,6 @@
 'use strict';
-var user = require('./user');
+var users = require('./users');
 
 module.exports = {
-  signIn: user.signIn
+  signIn: users.signIn
 };
