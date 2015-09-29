@@ -3,10 +3,9 @@
  */
 'use strict';
 
-var _ = require('lodash');
 var express = require('express');
 var router = express.Router();
-var controller = require('../controller');
+var dao = require('../dao');
 
 //client
 router.get('/test', function (req, res) {
@@ -14,7 +13,7 @@ router.get('/test', function (req, res) {
 });
 
 //admin
-router.post('/signIn', controller.signIn);
+router.post('/signIn', dao.signIn);
 
 module.exports = router;
 
