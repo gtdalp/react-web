@@ -8,7 +8,7 @@
         <article className="hold-transition login-page loginSelector">
           <div className="login-box">
             <div className="login-logo">
-              react-web
+              React-Web
             </div>
             <div className="login-box-body">
               <p className="login-box-msg">Sign in to start your session</p>
