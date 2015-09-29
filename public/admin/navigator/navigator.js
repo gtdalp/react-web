@@ -3,6 +3,8 @@
   var NavigatorSelector = React.createClass({
     render: function () {
       return <ul className="sidebar-menu">
+
+        <div id="navigator-item"/>
         <li className="header">MAIN NAVIGATION</li>
         <li className="active treeview">
           <a href="#">

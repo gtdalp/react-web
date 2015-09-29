@@ -1,3 +1,11 @@
-/**
- * Created by Microlv on 2015/9/29.
- */
+(function () {
+  'use strict';
+
+  var NavigatorItemSelector = React.createClass({
+    render: function () {
+      return <li></li>
+    }
+  });
+
+  React.render(<NavigatorItemSelector items=""/>, document.getElementById('navigator-item'));
+})();
