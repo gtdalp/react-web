@@ -1,3 +1,12 @@
-/**
- * Created by Microlv on 2015/9/29.
- */
+(function () {
+  'use strict';
+
+  var SideBarSelector = React.createClass({
+    render: function () {
+      return <div>hello</div>
+    }
+  });
+
+  React.render(<SideBarSelector/>, document.getElementById('sidebar'));
+
+})();
