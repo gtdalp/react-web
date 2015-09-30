@@ -3,7 +3,10 @@
 
   var ContentSelector = React.createClass({
     render: function () {
-      return '';
+      return <div id="profile" className="content-wrapper">
+        <div id="content-map"></div>
+        <div id="content"></div>
+      </div>;
     }
   });
 
