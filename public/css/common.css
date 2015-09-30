@@ -6,15 +6,19 @@
     border-bottom: 1px solid #dad4d4;
 }
 
+.content-wrapper {
+    min-height: 800px;
+}
+
 /*#frame-footer {*/
-    /*position: absolute;*/
-    /*bottom: 0;*/
+/*position: absolute;*/
+/*bottom: 0;*/
 /*}*/
 
 /*#frame-content {*/
-    /*position: absolute;*/
-    /*left: 0;*/
-    /*bottom: 0;*/
-    /*right: 0;*/
-    /*top: 50px;*/
+/*position: absolute;*/
+/*left: 0;*/
+/*bottom: 0;*/
+/*right: 0;*/
+/*top: 50px;*/
 /*}*/
