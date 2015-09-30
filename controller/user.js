@@ -8,7 +8,7 @@ function signIn(req, res) {
       res.send({code: '10086', msg: err});
     }
 
-    res.send(docs);
+    res.send({code: '8000', msg: docs});
   });
 }
 
