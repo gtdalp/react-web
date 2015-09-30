@@ -20,6 +20,6 @@
     }
   });
 
-  React.render(<SideBarSelector/>, document.getElementById('sidebar'));
+  React.render(<SideBarSelector/>, document.getElementById('frame-sidebar'));
 
 })();

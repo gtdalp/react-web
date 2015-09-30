@@ -1,5 +1,11 @@
 (function () {
   'use strict';
 
-  var SideBarSelector = React.createClass();
+  var ContentSelector = React.createClass({
+    render: function () {
+      return '';
+    }
+  });
+
+  React.render(<ContentSelector />, document.getElementById('frame-content'));
 })();
