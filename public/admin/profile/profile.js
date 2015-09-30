@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   'use strict';
 
   var ProfileSelector = React.createClass({
@@ -7,12 +7,12 @@
         <div className="col-md-3">
           <div className="box box-primary">
             <div className="box-body box-profile">
-              <img className="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg"
+              <img className="profile-user-img img-responsive img-circle" src="../images/me.jpg"
                    alt="User profile picture"/>
 
-              <h3 className="profile-username text-center">Nina Mcintire</h3>
+              <h3 className="profile-username text-center">Andy.lv</h3>
 
-              <p className="text-muted text-center">Software Engineer</p>
+              <p className="text-muted text-center">Web-Nodejs-Js Engineer</p>
 
               <ul className="list-group list-group-unbordered">
                 <li className="list-group-item">
@@ -30,7 +30,7 @@
             </div>
           </div>
         </div>
-        <div className="col-md-3">
+        <div className="col-md-5">
           <div className="box box-primary">
             <div className="box-header with-border">
               <h3 className="box-title">About Me</h3>
@@ -39,32 +39,32 @@
               <strong><i className="fa fa-book margin-r-5"></i> Education</strong>
 
               <p className="text-muted">
-                B.S. in Computer Science from the University of Tennessee at Knoxville
+                中山大学
               </p>
 
               <hr/>
 
               <strong><i className="fa fa-map-marker margin-r-5"></i> Location</strong>
 
-              <p className="text-muted">Malibu, California</p>
+              <p className="text-muted">广东，深圳</p>
 
               <hr/>
 
               <strong><i className="fa fa-pencil margin-r-5"></i> Skills</strong>
 
               <p>
-                <span className="label label-danger">UI Design</span>
-                <span className="label label-success">Coding</span>
+                <span className="label label-danger">Angularjs</span>
                 <span className="label label-info">Javascript</span>
-                <span className="label label-warning">PHP</span>
                 <span className="label label-primary">Node.js</span>
+                <span className="label label-success">React</span>
+                <span className="label label-warning">Hybrid App</span>
               </p>
 
               <hr/>
 
               <strong><i className="fa fa-file-text-o margin-r-5"></i> Notes</strong>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+              <p>欢迎来搞~</p>
             </div>
           </div>
         </div>

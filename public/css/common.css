@@ -5,3 +5,16 @@
 .login-logo, .register-logo {
     border-bottom: 1px solid #dad4d4;
 }
+
+/*#frame-footer {*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+/*}*/
+
+/*#frame-content {*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*bottom: 0;*/
+    /*right: 0;*/
+    /*top: 50px;*/
+/*}*/
