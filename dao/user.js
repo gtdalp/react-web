@@ -1,12 +1,9 @@
 'use strict';
 
-var User = require('../model').User;
+var mongo = require('./mongo');
 
-function signIn(email, password) {
-  User.find({}, function (err, docs) {
-    if (err) return next(err);
-    //res.send(docs);
-  });
+function signIn(obj, cb) {
+  mongo.collection('User').findOne(obj, cb);
 }
 
 module.exports = {

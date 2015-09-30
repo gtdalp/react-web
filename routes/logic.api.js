@@ -5,7 +5,7 @@
 
 var express = require('express');
 var router = express.Router();
-var dao = require('../dao');
+var controller = require('../controller');
 
 //client
 router.get('/test', function (req, res) {
@@ -13,7 +13,7 @@ router.get('/test', function (req, res) {
 });
 
 //admin
-router.post('/signIn', dao.signIn);
+router.post('/signIn', controller.signIn);
 
 module.exports = router;
 
