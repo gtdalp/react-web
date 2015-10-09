@@ -13,7 +13,11 @@ router.get('/test', function (req, res) {
 });
 
 //admin
+//post
 router.post('/signIn', controller.signIn);
+
+//get
+router.get('/getCategory', controller.getCategory);
 
 module.exports = router;
 

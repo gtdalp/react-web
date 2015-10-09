@@ -2,8 +2,8 @@
 
 var dao = require('../dao');
 
-function signIn(req, res) {
-  dao.signIn({email: req.body.email, password: req.body.password}, function (err, data) {
+function getCategory(req, res) {
+  dao.getCategory(function (err, data) {
     var obj = {code: '10086', msg: err};
     if (data) {
       obj.code = '8000';
@@ -15,5 +15,5 @@ function signIn(req, res) {
 }
 
 module.exports = {
-  signIn: signIn
+  getCategory: getCategory
 };
