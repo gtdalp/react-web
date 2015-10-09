@@ -2,31 +2,21 @@
   'use strict';
   var NavigatorSelector = React.createClass({
     getInitialState: function () {
-      return {};
+      return {items: []};
     },
     componentDidMount: function () {
       this.fetchData();
     },
     fetchData: function () {
+      var that = this;
       $.get('/api/getCategory').then(function (data) {
-
-
+        that.setState({items: data.data});
       });
     },
     render: function () {
       return <ul className="sidebar-menu">
-        <li>
-          <a href="pages/calendar.html">
-            <i className="fa fa-calendar"></i> <span>Calendar</span>
-            <small className="label pull-right bg-red">3</small>
-          </a>
-        </li>
-        <li>
-          <a href="pages/mailbox/mailbox.html">
-            <i className="fa fa-envelope"></i> <span>Mailbox</span>
-            <small className="label pull-right bg-yellow">12</small>
-          </a>
-        </li>
+
+        <div id='navigator-item' items={this.state.items}/>
 
         <li><a href="documentation/index.html"><i className="fa fa-book"></i> <span>Documentation</span></a></li>
         <li className="header">LABELS</li>
