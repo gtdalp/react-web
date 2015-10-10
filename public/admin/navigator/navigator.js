@@ -2,9 +2,13 @@
   'use strict';
 
   var NavigatorItemSelector = React.createClass({
+    handleRouter: function () {
+      React.render(<div>hello</div>, document.getElementById('content'));
+    },
     render: function () {
+      var that = this;
       var lis = this.props.items.map(function (item) {
-        return <li><a href="#">
+        return <li><a href="#" onClick={that.handleRouter}>
           <i className={item.icon}></i> <span>{item.name}</span>
           <small className="label pull-right bg-red">{item.count}</small>
         </a></li>;
