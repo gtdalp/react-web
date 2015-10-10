@@ -15,8 +15,7 @@
     },
     render: function () {
       return <ul className="sidebar-menu">
-
-        <div id='navigator-item' items={this.state.items}/>
+        <NavigatorItemSelector items={this.state.items}/>
 
         <li><a href="documentation/index.html"><i className="fa fa-book"></i> <span>Documentation</span></a></li>
         <li className="header">LABELS</li>
