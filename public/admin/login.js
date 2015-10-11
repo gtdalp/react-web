@@ -2,13 +2,25 @@
   'use strict';
 
   var LoginSelector = React.createClass({
-    signIn: handleSubmit,
+    signIn: function () {
+      var email = this.refs.email.getDOMNode().value.trim();
+      var password = this.refs.password.getDOMNode().value.trim();
+      if (!password || !email) {
+        return;
+      }
+      //send to server
+      $.post('/api/signIn', {email: email, password: password}, function (data) {
+        if (data.code === '8000') {
+          window.location.href = '/ad/index';
+        }
+      }.bind(this));
+    },
     render: function () {
       return (
         <article className="hold-transition login-page loginSelector">
           <div className="login-box">
             <div className="login-logo">
-              React-Web
+              React - Web
             </div>
             <div className="login-box-body">
               <p className="login-box-msg">Sign in to start your session</p>
@@ -35,20 +47,6 @@
       );
     }
   });
-
-  function handleSubmit() {
-    var email = this.refs.email.getDOMNode().value.trim();
-    var password = this.refs.password.getDOMNode().value.trim();
-    if (!password || !email) {
-      return;
-    }
-    //send to server
-    $.post('/api/signIn', {email: email, password: password}, function (data) {
-      if (data.code === '8000') {
-        window.location.href = '/ad/index';
-      }
-    });
-  }
 
   React.render(
     <LoginSelector />,

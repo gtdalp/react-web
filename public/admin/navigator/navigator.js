@@ -3,7 +3,7 @@
 
   var NavigatorItemSelector = React.createClass({
     handleRouter: function () {
-      React.render(<div>hello</div>, document.getElementById('content'));
+      React.render(React.getComponent('Timeline'), document.getElementById('content'));
     },
     render: function () {
       var that = this;
@@ -43,6 +43,7 @@
     }
   });
 
+  React.registerComponent('NavigatorItemSelector', <NavigatorItemSelector/>);
   React.render(<NavigatorSelector/>, document.getElementById('navigator'));
 })();
 

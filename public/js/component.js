@@ -1,23 +1,24 @@
-(function (root) {
+(function (React) {
   'use strict';
 
   var component = [];
 
-  var _register = function (name, component) {
-    component.push({name: name, component: component});
+  var _register = function (name, com) {
+    component.push({name: name, component: com});
   };
 
   var _getComponent = function (name) {
+    var _com = <div></div>;
     for (var i = 0; i < component.length; i++) {
       if (component[i].name === name) {
-        return component[i];
+        _com = component[i];
+        break;
       }
     }
+    return _com.component;
   };
 
-  root.React.component = {
-    registerComponent: _register,
-    getComponent: _getComponent
-  };
+  React.registerComponent = _register;
+  React.getComponent = _getComponent;
 
-})(this);
+})(React);
