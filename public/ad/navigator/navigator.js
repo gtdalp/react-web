@@ -3,7 +3,7 @@
 
   var NavigatorItemSelector = React.createClass({
     handleRouter: function (name) {
-//      console.log('url-->' + name);
+      console.log('url-->' + name);
       React.render(React.getComponent('Timeline'), document.getElementById('content'));
     },
     render: function () {

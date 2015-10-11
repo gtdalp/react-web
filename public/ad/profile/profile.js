@@ -72,5 +72,6 @@
     }
   });
 
+  React.registerComponent('ProfileSelector', <ProfileSelector/>);
   React.render(<ProfileSelector />, document.getElementById('content'));
 })();

@@ -8,7 +8,6 @@ var router = express.Router();
 
 function render(html) {
   return function (req, res) {
-    //render the admin folder files
     res.render(html);
   };
 }
@@ -21,7 +20,7 @@ router.get('/', render('index'));
 //can't use admin,because the it conflice with public admin
 router.get('/ad', render('login'));
 router.get('/login', render('login'));
-router.get('/ad/index', render('admin'));
+router.get('/adindex', render('admin'));
 
 module.exports = router;
 
