@@ -48,8 +48,5 @@
     }
   });
 
-  React.render(
-    <LoginSelector />,
-    document.getElementById('login')
-  );
+  React.render(<LoginSelector />, document.getElementById('login'));
 })();

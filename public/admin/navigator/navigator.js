@@ -2,13 +2,14 @@
   'use strict';
 
   var NavigatorItemSelector = React.createClass({
-    handleRouter: function () {
+    handleRouter: function (name) {
+//      console.log('url-->' + name);
       React.render(React.getComponent('Timeline'), document.getElementById('content'));
     },
     render: function () {
       var that = this;
       var lis = this.props.items.map(function (item) {
-        return <li><a href="#" onClick={that.handleRouter}>
+        return <li><a href="#" onClick={that.handleRouter(item.name)}>
           <i className={item.icon}></i> <span>{item.name}</span>
           <small className="label pull-right bg-red">{item.count}</small>
         </a></li>;

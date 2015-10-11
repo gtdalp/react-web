@@ -16,5 +16,5 @@
     }
   });
 
-  React.render(<ContentMapSelector />, document.getElementById('content-map'));
+  React.render(<ContentMapSelector />, document.getElementById('navigator-map'));
 })();
