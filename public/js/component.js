@@ -3,7 +3,7 @@
 
   var component = [];
 
-  var _register = function (name, com) {
+  var _registerComponent = function (name, com) {
     component.push({name: name, component: com});
   };
 
@@ -18,7 +18,7 @@
     return _com.component;
   };
 
-  React.registerComponent = _register;
+  React.registerComponent = _registerComponent;
   React.getComponent = _getComponent;
 
 })(React);

@@ -4,9 +4,8 @@
   var ContentSelector = React.createClass({
     render: function () {
       return <header className="main-header">
-        <a href="index2.html" className="logo">
-          <span className="logo-mini"><b>A</b>LT</span>
-          <span className="logo-lg">Microlv</span>
+        <a href="#" className="logo">
+          <img src="images/react-web.png" className="width:170px"/>
         </a>
         <nav className="navbar navbar-static-top" role="navigation">
           <a href="#" className="sidebar-toggle" data-toggle="offcanvas" role="button">
