@@ -2,6 +2,9 @@
   'use strict';
 
   var ContentSelector = React.createClass({
+    postArticle: function () {
+      React.render(React.getComponent('PostArticle'), document.getElementById('content'));
+    },
     render: function () {
       return <header className="main-header">
         <a href="#" className="logo">
@@ -11,7 +14,6 @@
           <a href="#" className="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span className="sr-only">Toggle navigation</span>
           </a>
-
 
           <div className="navbar-custom-menu">
             <ul className="nav navbar-nav">
@@ -39,7 +41,7 @@
                       <li>
                         <a href="#">
                           <div className="pull-left">
-                            <img src="dist/img/user3-128x128.jpg" className="img-circle" alt="User Image"/>
+                            {/*<img src="dist/img/user3-128x128.jpg" className="img-circle" alt="User Image"/>*/}
                           </div>
                           <h4>
                             AdminLTE Design Team
@@ -51,7 +53,7 @@
                       <li>
                         <a href="#">
                           <div className="pull-left">
-                            <img src="dist/img/user4-128x128.jpg" className="img-circle" alt="User Image"/>
+                            {/*<img src="dist/img/user4-128x128.jpg" className="img-circle" alt="User Image"/>*/}
                           </div>
                           <h4>
                             Developers
@@ -63,7 +65,7 @@
                       <li>
                         <a href="#">
                           <div className="pull-left">
-                            <img src="dist/img/user3-128x128.jpg" className="img-circle" alt="User Image"/>
+                            {/* <img src="dist/img/user3-128x128.jpg" className="img-circle" alt="User Image"/>*/}
                           </div>
                           <h4>
                             Sales Department
@@ -75,7 +77,7 @@
                       <li>
                         <a href="#">
                           <div className="pull-left">
-                            <img src="dist/img/user4-128x128.jpg" className="img-circle" alt="User Image"/>
+                             {/* <img src="dist/img/user4-128x128.jpg" className="img-circle" alt="User Image"/>*/}
                           </div>
                           <h4>
                             Reviewers
@@ -167,7 +169,7 @@
                 </ul>
               </li>
               <li>
-                <a href="#" data-toggle="control-sidebar"><i className="fa fa-gears"></i></a>
+                <a href="#" onClick={this.postArticle} data-toggle="control-sidebar"><i className="fa fa-gears"></i>PostArticle</a>
               </li>
             </ul>
           </div>

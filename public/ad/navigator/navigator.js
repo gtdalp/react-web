@@ -9,7 +9,7 @@
     render: function () {
       var that = this;
       var lis = this.props.items.map(function (item) {
-        return <li><a href="#" onClick={that.handleRouter(item.name)}>
+        return <li onClick={that.handleRouter(item.name)}><a href="#" >
           <i className={item.icon}></i> <span>{item.name}</span>
           <small className="label pull-right bg-red">{item.count}</small>
         </a></li>;
