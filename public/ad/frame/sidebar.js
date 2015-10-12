@@ -7,11 +7,11 @@
         <section className="sidebar">
           <div className="user-panel">
             <div className="pull-left image">
-              <img src="../lib/AdminLTE/dist/img/user2-160x160.jpg" className="img-circle" alt="User Image"/>
+              <img src="images/me64X64.ico" className="img-circle" alt="User Image"/>
             </div>
             <div className="pull-left info">
-              <p>Alexander Pierce</p>
-              <a href="#"><i className="fa fa-circle text-success"></i> Online</a>
+              <p>Microlv</p>
+              <a href="https://github.com/microlv"><i className="fa fa-circle text-success"></i>Github</a>
             </div>
           </div>
           <div id="navigator"></div>

@@ -1,118 +1,121 @@
-<section className="content">
 
-  <div className="row">
-    <div className="col-md-12">
-      <ul className="timeline">
-        <li className="time-label">
-                  <span className="bg-red">
-                    10 Feb. 2014
-                  </span>
-        </li>
-        <li>
-          <i className="fa fa-envelope bg-blue"></i>
 
-          <div className="timeline-item">
-            <span className="time"><i className="fa fa-clock-o"></i> 12:05</span>
+<form role="form">
+  <div class="form-group">
+    <label>Text</label>
+    <input type="text" class="form-control" placeholder="Enter ...">
+  </div>
+  <div class="form-group">
+    <label>Text Disabled</label>
+    <input type="text" class="form-control" placeholder="Enter ..." disabled>
+  </div>
 
-            <h3 className="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
+  <div class="form-group">
+    <label>Textarea</label>
+    <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+  </div>
+  <div class="form-group">
+    <label>Textarea Disabled</label>
+    <textarea class="form-control" rows="3" placeholder="Enter ..." disabled></textarea>
+  </div>
 
-            <div className="timeline-body">
-              Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-              weebly ning heekya handango imeem plugg dopplr jibjab, movity
-              jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-              quora plaxo ideeli hulu weebly balihoo...
-            </div>
-            <div className="timeline-footer">
-              <a className="btn btn-primary btn-xs">Read more</a>
-              <a className="btn btn-danger btn-xs">Delete</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <i className="fa fa-user bg-aqua"></i>
+  <div class="form-group has-success">
+    <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Input with success</label>
+    <input type="text" class="form-control" id="inputSuccess" placeholder="Enter ...">
+  </div>
+  <div class="form-group has-warning">
+    <label class="control-label" for="inputWarning"><i class="fa fa-bell-o"></i> Input with warning</label>
+    <input type="text" class="form-control" id="inputWarning" placeholder="Enter ...">
+  </div>
+  <div class="form-group has-error">
+    <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> Input with error</label>
+    <input type="text" class="form-control" id="inputError" placeholder="Enter ...">
+  </div>
 
-          <div className="timeline-item">
-            <span className="time"><i className="fa fa-clock-o"></i> 5 mins ago</span>
+  <div class="form-group">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox">
+        Checkbox 1
+      </label>
+    </div>
 
-            <h3 className="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request
-            </h3>
-          </div>
-        </li>
-        <li>
-          <i className="fa fa-comments bg-yellow"></i>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox">
+        Checkbox 2
+      </label>
+    </div>
 
-          <div className="timeline-item">
-            <span className="time"><i className="fa fa-clock-o"></i> 27 mins ago</span>
-
-            <h3 className="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-
-            <div className="timeline-body">
-              Take me to your leader!
-              Switzerland is small and neutral!
-              We are more like Germany, ambitious and misunderstood!
-            </div>
-            <div className="timeline-footer">
-              <a className="btn btn-warning btn-flat btn-xs">View comment</a>
-            </div>
-          </div>
-        </li>
-        <li className="time-label">
-                  <span className="bg-green">
-                    3 Jan. 2014
-                  </span>
-        </li>
-        <li>
-          <i className="fa fa-camera bg-purple"></i>
-
-          <div className="timeline-item">
-            <span className="time"><i className="fa fa-clock-o"></i> 2 days ago</span>
-
-            <h3 className="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
-            <div className="timeline-body">
-              <img src="http://placehold.it/150x100" alt="..." className="margin"/>
-              <img src="http://placehold.it/150x100" alt="..." className="margin"/>
-              <img src="http://placehold.it/150x100" alt="..." className="margin"/>
-              <img src="http://placehold.it/150x100" alt="..." className="margin"/>
-            </div>
-          </div>
-        </li>
-        <li>
-          <i className="fa fa-video-camera bg-maroon"></i>
-
-          <div className="timeline-item">
-            <span className="time"><i className="fa fa-clock-o"></i> 5 days ago</span>
-
-            <h3 className="timeline-header"><a href="#">Mr. Doe</a> shared a video</h3>
-
-            <div className="timeline-body">
-              <div className="embed-responsive embed-responsive-16by9">
-                <iframe className="embed-responsive-item" src="https://www.youtube.com/embed/tMWkeBIohBs"
-                        frameborder="0" allowfullscreen></iframe>
-              </div>
-            </div>
-            <div className="timeline-footer">
-              <a href="#" className="btn btn-xs bg-maroon">See comments</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <i className="fa fa-clock-o bg-gray"></i>
-        </li>
-      </ul>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" disabled>
+        Checkbox disabled
+      </label>
     </div>
   </div>
 
-  <div className="row" style="margin-top: 10px;">
-    <div className="col-md-12">
-      <div className="box box-primary">
-        <div className="box-header">
-          <h3 className="box-title"><i className="fa fa-code"></i> Timeline Markup</h3>
-        </div>
-        <div className="box-body">
-
-        </div>
-      </div>
+  <div class="form-group">
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+        Option one is this and that&mdash;be sure to include why it's great
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+        Option two can be something else and selecting it will deselect option one
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+        Option three is disabled
+      </label>
     </div>
   </div>
-</section>
+
+  <div class="form-group">
+    <label>Select</label>
+    <select class="form-control">
+      <option>option 1</option>
+      <option>option 2</option>
+      <option>option 3</option>
+      <option>option 4</option>
+      <option>option 5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Select Disabled</label>
+    <select class="form-control" disabled>
+      <option>option 1</option>
+      <option>option 2</option>
+      <option>option 3</option>
+      <option>option 4</option>
+      <option>option 5</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Select Multiple</label>
+    <select multiple class="form-control">
+      <option>option 1</option>
+      <option>option 2</option>
+      <option>option 3</option>
+      <option>option 4</option>
+      <option>option 5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Select Multiple Disabled</label>
+    <select multiple class="form-control" disabled>
+      <option>option 1</option>
+      <option>option 2</option>
+      <option>option 3</option>
+      <option>option 4</option>
+      <option>option 5</option>
+    </select>
+  </div>
+
+</form>
