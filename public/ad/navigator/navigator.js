@@ -2,14 +2,14 @@
   'use strict';
 
   var NavigatorItemSelector = React.createClass({
-    handleRouter: function (name) {
-      console.log('url-->' + name);
+    handleRouter: function () {
+//      console.log('url-->' + name);
       React.render(React.getComponent('Timeline'), document.getElementById('content'));
     },
     render: function () {
       var that = this;
       var lis = this.props.items.map(function (item) {
-        return <li><a href="#" onClick={that.handleRouter(item.name)}>
+        return <li><a href="#" onClick={that.handleRouter} data-tag={item.name}>
           <i className={item.icon}></i> <span>{item.name}</span>
           <small className="label pull-right bg-red">{item.count}</small>
         </a></li>;
@@ -36,6 +36,10 @@
     fetchData: function () {
       var that = this;
       $.get('/api/getCategory').then(function (data) {
+        //get count
+        $.get('/api/getArticleCount').then(function (count) {
+          console.log(count);
+        }.bind(this));
         that.setState({items: data.data});
       }.bind(this));
     },

@@ -18,6 +18,7 @@ router.post('/signIn', controller.signIn);
 
 //get
 router.get('/getCategory', controller.getCategory);
+router.get('/getArticleCount', controller.getArticleCount);
 
 module.exports = router;
 
