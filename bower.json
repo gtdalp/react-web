@@ -37,6 +37,8 @@
     "font-awesome": "~4.4.0",
     "jquery": "~2.1.4",
     "jquery-ui": "~1.11.4",
+    "lodash": "~3.10.1",
+    "q": "~2.0.2",
     "react": "~0.13.3",
     "react-router": "~0.13.3"
   }

@@ -35,12 +35,21 @@
     },
     fetchData: function () {
       var that = this;
-      $.get('/api/getCategory').then(function (data) {
+
+      $.get('/api/getCategory').then(function (category) {
         //get count
-        $.get('/api/getArticleCount').then(function (count) {
-          console.log(count);
+        $.get('/api/getArticleCount').then(function (article) {
+          _.forEach(category.data, function (cate) {
+            _.forEach(article, function (art) {
+              if (cate._id === art._id) {
+                cate.count = art.count;
+              }
+            });
+          });
+
+          that.setState({items: category.data});
         }.bind(this));
-        that.setState({items: data.data});
+        that.setState({items: category.data});
       }.bind(this));
     },
     render: function () {
@@ -50,6 +59,7 @@
 
   React.registerComponent('NavigatorItemSelector', <NavigatorItemSelector/>);
   React.render(<NavigatorSelector/>, document.getElementById('navigator'));
+
 })();
 
 
