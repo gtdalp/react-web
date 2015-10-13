@@ -18,7 +18,6 @@ router.get('/', render('index'));
 
 //admin
 //can't use admin,because the it conflice with public admin
-router.get('/ad', render('login'));
 router.get('/login', render('login'));
 router.get('/admin', render('admin'));
 

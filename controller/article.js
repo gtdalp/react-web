@@ -3,7 +3,7 @@
 var dao = require('../dao');
 
 function getArticleCount(req, res) {
-  dao.getArticleCount(function (err, data) {
+  dao.getArticleCount().then(function (err, data) {
     res.send(data);
   });
 }
