@@ -19,7 +19,7 @@ router.get('/', render('index'));
 //admin
 //can't use admin,because the it conflice with public admin
 router.get('/login', render('login'));
-router.get('/ad-index', render('admin'));
+router.get('/adindex', render('admin'));
 
 module.exports = router;
 
