@@ -34,7 +34,7 @@
         <div className="row col-md-12">
           <div className="box box-warning">
             <div className="box-header with-border">
-              <h3 className="box-title">General Elements</h3>
+              <h3 className="box-title">Post Article</h3>
             </div>
             <div className="box-body">
 

@@ -11,7 +11,7 @@
             </div>
             <div className="pull-left info">
               <p>Microlv</p>
-              <a href="https://github.com/microlv"><i className="fa fa-circle text-success"></i>Github</a>
+              <a href="https://github.com/microlv"><i className="fa fa-circle text-success"></i>Fork me on Github</a>
             </div>
           </div>
           <div id="navigator"></div>
