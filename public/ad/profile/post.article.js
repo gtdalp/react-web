@@ -5,18 +5,7 @@
   'use strict';
 
   var PostArticleSelectOption = React.createClass({
-    getInitialState: function () {
-      return {items: []};
-    },
-    componentDidMount: function () {
-      this.fetchData();
-    },
-    fetchData: function () {
-      var that = this;
-      $.get('/api/getCategory').then(function (data) {
-        that.setState({items: data.data});
-      }.bind(this));
-    },
+
     render: function () {
       var that = this;
       var lis = this.state.items.map(function (item) {
@@ -29,6 +18,17 @@
   });
 
   var PostArticle = React.createClass({
+    getInitialState: function () {
+      return {items: []};
+    },
+    componentDidMount: function () {
+      this.fetchData();
+    },
+    fetchData: function () {
+      $.get('/api/getCategory').then(function (data) {
+        this.setState({items: data.data});
+      }.bind(this));
+    },
     render: function () {
       return <section className="content">
         <div className="row">
@@ -46,7 +46,7 @@
 
                   <div className="form-group">
                     <label>Select</label>
-                    <PostArticleSelectOption />
+                    <PostArticleSelectOption items={this.state.items}/>
                   </div>
 
                   <div className="form-group">

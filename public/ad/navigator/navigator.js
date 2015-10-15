@@ -35,8 +35,6 @@
       this.fetchData();
     },
     fetchData: function () {
-      var that = this;
-
       $.get('/api/getCategory').then(function (category) {
         //get count
         $.get('/api/getArticleCount').then(function (article) {
@@ -48,9 +46,9 @@
             });
           });
 
-          that.setState({items: category.data});
+          this.setState({items: category.data});
         }.bind(this));
-        that.setState({items: category.data});
+        this.setState({items: category.data});
       }.bind(this));
     },
     render: function () {
