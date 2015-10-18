@@ -5,6 +5,11 @@
     render: function () {
       return <aside className="main-sidebar">
         <section className="sidebar">
+          <a href="#" className="logo">
+            <img src="images/react-web.png" className="width:170px"/>
+
+          </a>
+
           <div className="user-panel">
             <div className="pull-left image">
               <img src="images/me64X64.ico" className="img-circle" alt="User Image"/>

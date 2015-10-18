@@ -7,10 +7,6 @@
     },
     render: function () {
       return <header className="main-header">
-        <a href="#" className="logo">
-          <img src="images/react-web.png" className="width:170px"/>
-
-        </a>
         <nav className="navbar navbar-static-top" role="navigation">
           <a href="#" className="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span className="sr-only">Toggle navigation</span>
@@ -78,7 +74,7 @@
                       <li>
                         <a href="#">
                           <div className="pull-left">
-                             {/* <img src="dist/img/user4-128x128.jpg" className="img-circle" alt="User Image"/>*/}
+                            {/* <img src="dist/img/user4-128x128.jpg" className="img-circle" alt="User Image"/>*/}
                           </div>
                           <h4>
                             Reviewers

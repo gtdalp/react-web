@@ -37,3 +37,20 @@ body {
     left: 0;
     right: 0;
 }
+
+.main-sidebar {
+    padding-top: 0
+}
+
+.main-sidebar .logo {
+    display: block;
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #676767;
+}
+
+#frame-sidebar {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+}
