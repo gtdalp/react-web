@@ -58,3 +58,35 @@ body {
 .skin-blue .main-header .navbar {
     background-color: #3C494F;
 }
+
+.timeline > li > .timeline-item {
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    background: #fff;
+    color: #444;
+    margin: 10px 15px 0 60px;
+    position: relative;
+}
+
+.timeline > li > .time-label .fa {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 30px;
+    position: absolute;
+    color: #666;
+    background: #d2d6de;
+    border-radius: 50%;
+    text-align: center;
+    left: 18px;
+    top: 50px;
+}
+
+.timeline > li > .time-label > span {
+    font-weight: 600;
+    padding: 5px;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 4px;
+}

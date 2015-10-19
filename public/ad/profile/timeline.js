@@ -1,110 +1,82 @@
 (function () {
   'use strict';
 
+  var colors = ['bg-red,',
+                'bg-yellow',
+                'bg-aqua',
+                'bg-blue',
+                'bg-light-blue',
+                'bg-green',
+                'bg-navy',
+                'bg-teal',
+                'bg-olive',
+                'bg-lime',
+                'bg-orange',
+                'bg-fuchsia',
+                'bg-purple',
+                'bg-maroon',
+                'bg-black'
+  ];
+  var icons = ['fa-comments', 'fa-envelope', 'fa-user', 'fa-video-camera', 'fa-clock-o',
+               'fa-heart-o', 'fa-thumb-tack', 'fa-external-link', 'fa-trophy', 'fa-cogs'];
+
+  var TimeLineItem = React.createClass({
+
+    render: function () {
+
+      var lis = this.props.items.map(function (item) {
+        return <li>
+          <div className="time-label">
+            <span className={round(colors)}>
+              {item.date}
+            </span>
+            <i className={'fa '+ round(icons) + ' '+ round(colors)}></i>
+          </div>
+          <div className="timeline-item">
+            <span className="time"><i className="fa fa-clock-o"></i>{item.time}</span>
+
+            <h3 className="timeline-header"><a href="#">{item.title}</a>{item.origin}</h3>
+
+            <div className="timeline-body">
+              {item.content}...
+            </div>
+            <div className="timeline-footer">
+              <a className="btn btn-primary btn-xs">Read more</a>
+            </div>
+          </div>
+        </li>;
+      });
+
+      return <ul className="timeline">
+        {lis}
+      </ul>;
+    }
+  });
+
   var Timeline = React.createClass({
+    getInitialState: function () {
+      return {items: []};
+    },
+    componentDidMount: function () {
+      this.fetchData();
+    },
+    fetchData: function () {
+      $.get('/api/getCategory').then(function (data) {
+        this.setState({
+          items: [{date: new Date().toDateString(), title: 'hello', origin: '', time: '17:11:42', content: 'content'},
+            {date: new Date().toDateString(), title: 'hello2', origin: '', time: '17:11:42', content: 'content'},
+            {date: new Date().toDateString(), title: 'hello2', origin: '', time: '17:11:42', content: 'content'},
+            {date: new Date().toDateString(), title: 'hello2', origin: '', time: '17:11:42', content: 'content'},
+            {date: new Date().toDateString(), title: 'hello2', origin: '', time: '17:11:42', content: 'content'},
+            {date: new Date().toDateString(), title: 'hello3', origin: '', time: '17:11:42', content: 'content'}]
+        });
+      }.bind(this));
+    },
     render: function () {
       return <section className="content">
         <div className="row">
           <div className="col-md-12">
-            <ul className="timeline">
-              <li className="time-label">
-                  <span className="bg-red">
-                    10 Feb. 2014
-                  </span>
-              </li>
-              <li>
-                <i className="fa fa-envelope bg-blue"></i>
-
-                <div className="timeline-item">
-                  <span className="time"><i className="fa fa-clock-o"></i> 12:05</span>
-
-                  <h3 className="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
-
-                  <div className="timeline-body">
-                    Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-                    weebly ning heekya handango imeem plugg dopplr jibjab, movity
-                    jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-                    quora plaxo ideeli hulu weebly balihoo...
-                  </div>
-                  <div className="timeline-footer">
-                    <a className="btn btn-primary btn-xs">Read more</a>
-                    <a className="btn btn-danger btn-xs">Delete</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <i className="fa fa-user bg-aqua"></i>
-
-                <div className="timeline-item">
-                  <span className="time"><i className="fa fa-clock-o"></i> 5 mins ago</span>
-
-                  <h3 className="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request
-                  </h3>
-                </div>
-              </li>
-              <li>
-                <i className="fa fa-comments bg-yellow"></i>
-
-                <div className="timeline-item">
-                  <span className="time"><i className="fa fa-clock-o"></i> 27 mins ago</span>
-
-                  <h3 className="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-
-                  <div className="timeline-body">
-                    Take me to your leader!
-                    Switzerland is small and neutral!
-                    We are more like Germany, ambitious and misunderstood!
-                  </div>
-                  <div className="timeline-footer">
-                    <a className="btn btn-warning btn-flat btn-xs">View comment</a>
-                  </div>
-                </div>
-              </li>
-
-              <li className="time-label">
-                  <span className="bg-green">
-                    3 Jan. 2014
-                  </span>
-              </li>
-              <li>
-                <i className="fa fa-camera bg-purple"></i>
-
-                <div className="timeline-item">
-                  <span className="time"><i className="fa fa-clock-o"></i> 2 days ago</span>
-
-                  <h3 className="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
-                  <div className="timeline-body">
-                    <img src="http://placehold.it/150x100" alt="..." className="margin"/>
-                    <img src="http://placehold.it/150x100" alt="..." className="margin"/>
-                    <img src="http://placehold.it/150x100" alt="..." className="margin"/>
-                    <img src="http://placehold.it/150x100" alt="..." className="margin"/>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <i className="fa fa-video-camera bg-maroon"></i>
-
-                <div className="timeline-item">
-                  <span className="time"><i className="fa fa-clock-o"></i> 5 days ago</span>
-
-                  <h3 className="timeline-header"><a href="#">Mr. Doe</a> shared a video</h3>
-
-                  <div className="timeline-body">
-                    <div className="embed-responsive embed-responsive-16by9">
-                      <iframe className="embed-responsive-item" src="https://www.youtube.com/embed/tMWkeBIohBs"
-                              frameborder="0" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                  <div className="timeline-footer">
-                    <a href="#" className="btn btn-xs bg-maroon">See comments</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <i className="fa fa-clock-o bg-gray"></i>
-              </li>
-            </ul>
+            <TimeLineItem items={this.state.items}/>
           </div>
         </div>
       </section>;
@@ -112,5 +84,9 @@
   });
 
   React.registerComponent('Timeline', <Timeline/>);
+
+  function round(t) {
+    return t[parseInt(Math.random(t.length) * 10)];
+  }
 
 })();
