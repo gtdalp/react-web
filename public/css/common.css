@@ -46,11 +46,15 @@ body {
     display: block;
     text-align: left;
     padding: 8px;
-    border-bottom: 1px solid #676767;
+    border-bottom: 2px solid #676767;
 }
 
 #frame-sidebar {
     position: fixed;
     bottom: 0;
     top: 0;
+}
+
+.skin-blue .main-header .navbar {
+    background-color: #3C494F;
 }
