@@ -59,6 +59,7 @@
   React.registerComponent('NavigatorItemSelector', <NavigatorItemSelector/>);
   React.render(<NavigatorSelector/>, document.getElementById('navigator'));
 
+
 })();
 
 
