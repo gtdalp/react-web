@@ -7,6 +7,8 @@ var article = require('./article');
 module.exports = {
   signIn: user.signIn,
   getCategory: category.getCategory,
-//  groupCategory: category.groupCategory,
-  getArticleCount: article.getArticleCount
+
+  //article
+  getArticleCount: article.getArticleCount,
+  getArticleList: article.getArticleList
 };

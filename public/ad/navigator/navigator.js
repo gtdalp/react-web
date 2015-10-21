@@ -39,7 +39,7 @@
         //get count
         $.get('/api/getArticleCount').then(function (article) {
           _.forEach(category.data, function (cate) {
-            _.forEach(article, function (art) {
+            _.forEach(article.data, function (art) {
               if (cate._id === art._id) {
                 cate.count = art.count;
               }

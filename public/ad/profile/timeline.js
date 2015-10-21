@@ -30,26 +30,19 @@
     'fa-trophy',
     'fa-cogs'
   ];
-  var currentDate, countDate = 0;
 
-  function dateShow(item) {
-    if (item.date !== currentDate) {
-      currentDate = item.date;
-      return <span className={round(colors)}>
-          {item.date}
-          </span>
-    }
-  }
   var TimeLineItem = React.createClass({
     timeLabel: function (item) {
       return <div className="time-label">
-        {dateShow(item)}
+        <span className={round(colors)}>
+          {item.date.toLocaleDateString()}
+        </span>
         <i className={'fa '+ round(icons) + ' '+ round(colors)}></i>
       </div>;
     },
     timeItem: function (item) {
       return <div className="timeline-item">
-        <span className="time"><i className="fa fa-clock-o"></i>{item.time}</span>
+        <span className="time"><i className="fa fa-clock-o"></i>{item.date.toLocaleTimeString()}</span>
 
         <h3 className="timeline-header"><a href="#">{item.title}</a>{item.origin}</h3>
 
@@ -84,14 +77,9 @@
       this.fetchData();
     },
     fetchData: function () {
-      $.get('/api/getCategory').then(function (data) {
+      $.get('/api/getArticleList').then(function (data) {
         this.setState({
-          items: [{date: new Date().toDateString(), title: 'hello', origin: '', time: '17:11:42', content: 'content'},
-            {date: new Date().toDateString(), title: 'hello2', origin: '', time: '17:11:42', content: 'content'},
-            {date: new Date().toDateString(), title: 'hello2', origin: '', time: '17:11:42', content: 'content'},
-            {date: new Date().toDateString(), title: 'hello2', origin: '', time: '17:11:42', content: 'content'},
-            {date: new Date().toDateString(), title: 'hello2', origin: '', time: '17:11:42', content: 'content'},
-            {date: new Date().toDateString(), title: 'hello3', origin: '', time: '17:11:42', content: 'content'}]
+          items: data.data
         });
       }.bind(this));
     },
