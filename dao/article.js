@@ -24,7 +24,19 @@ function getArticleList() {
   var d = q.defer();
   mongo.collection('Article').findItems(function (err, data) {
     _.forEach(data, function (item) {
-      item.content = item.content.length > 300 ? item.subString(0, 300) : item.content;
+      item.content = item.content.length > 300 ? item.content.substring(0, 300) : item.content;
+    });
+
+    err ? d.reject(err) : d.resolve(data);
+  });
+  return d.promise;
+}
+
+function getArticleByCategoryId(obj) {
+  var d = q.defer();
+  mongo.collection('Article').findItems(obj, function (err, data) {
+    _.forEach(data, function (item) {
+      item.content = item.content.length > 300 ? item.content.substring(0, 300) : item.content;
     });
 
     err ? d.reject(err) : d.resolve(data);
@@ -34,5 +46,6 @@ function getArticleList() {
 
 module.exports = {
   getArticleCount: getArticleCount,
-  getArticleList: getArticleList
+  getArticleList: getArticleList,
+  getArticleByCategoryId: getArticleByCategoryId
 };

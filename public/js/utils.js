@@ -14,4 +14,7 @@
     }
     return this;
   };
+
+  React.component = {};
+
 })();

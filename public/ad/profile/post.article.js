@@ -63,6 +63,6 @@
     }
   });
 
-  React.registerComponent('PostArticle', <PostArticle/>);
+//  React.registerComponent('PostArticle', <PostArticle/>);
 
 })();

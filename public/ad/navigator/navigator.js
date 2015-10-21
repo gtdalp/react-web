@@ -1,28 +1,32 @@
 (function () {
   'use strict';
 
+  function handleRouter(tag) {
+    return function () {
+      var TimelineSelector = React.component.TimelineSelector;
+      React.render(<TimelineSelector dataTag={tag}/>, document.getElementById('content'));
+    };
+  }
+
   var NavigatorItemSelector = React.createClass({
-    handleRouter: function () {
-//      console.log('url-->' + name);
-      React.render(React.getComponent('Timeline'), document.getElementById('content'));
-    },
+
     render: function () {
-      var that = this;
       var lis = this.props.items.map(function (item) {
-        return <li><a href="#" onClick={that.handleRouter} data-tag={item.name}>
+        return <li><a href="#" onClick={handleRouter(item.name)}>
           <i className={item.icon}></i> <span>{item.name}</span>
           <small className="label pull-right bg-red">{item.count}</small>
         </a></li>;
-      });
+      }.bind(this));
+
       return <ul className="sidebar-menu">
         <li className="header">Category</li>
         {lis}
         <li className="header">Demo</li>
         {/*
-        <li><a href="#"><i className="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i className="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i className="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
-        */}
+         <li><a href="#"><i className="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+         <li><a href="#"><i className="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+         <li><a href="#"><i className="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+         */}
       </ul>;
     }
   });
@@ -56,7 +60,7 @@
     }
   });
 
-  React.registerComponent('NavigatorItemSelector', <NavigatorItemSelector/>);
+  //React.registerComponent('NavigatorSelector', NavigatorSelector);
   React.render(<NavigatorSelector/>, document.getElementById('navigator'));
 
 

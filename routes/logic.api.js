@@ -21,6 +21,7 @@ router.get('/getCategory', controller.getCategory);
 
 router.get('/getArticleCount', controller.getArticleCount);
 router.get('/getArticleList', controller.getArticleList);
+router.get('/getArticleByCategoryId/:categoryId', controller.getArticleByCategoryId);
 
 module.exports = router;
 

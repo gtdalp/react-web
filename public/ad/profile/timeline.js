@@ -31,7 +31,7 @@
     'fa-cogs'
   ];
 
-  var TimeLineItem = React.createClass({
+  var TimeLineItemSelector = React.createClass({
     timeLabel: function (item) {
       return <div className="time-label">
         <span className={round(colors)}>
@@ -69,7 +69,7 @@
     }
   });
 
-  var Timeline = React.createClass({
+  var TimelineSelector = React.createClass({
     getInitialState: function () {
       return {items: []};
     },
@@ -77,7 +77,7 @@
       this.fetchData();
     },
     fetchData: function () {
-      $.get('/api/getArticleList').then(function (data) {
+      $.get('/api/getArticleList?categoryId=' + this.props.dataTag).then(function (data) {
         this.setState({
           items: data.data
         });
@@ -87,14 +87,15 @@
       return <section className="content">
         <div className="row">
           <div className="col-md-12">
-            <TimeLineItem items={this.state.items}/>
+            <TimeLineItemSelector items={this.state.items}/>
           </div>
         </div>
       </section>;
     }
   });
 
-  React.registerComponent('Timeline', <Timeline/>);
+  //React.registerComponent('TimelineSelector', TimelineSelector);
+  React.component.TimelineSelector = TimelineSelector;
 
   function round(t) {
     return t[parseInt(Math.random(t.length) * 10)];
