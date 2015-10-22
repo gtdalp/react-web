@@ -9,14 +9,18 @@
     };
   }
 
+  var Link = ReactRouter.Link;
+
   var NavigatorItemSelector = React.createClass({
 
     render: function () {
       var lis = this.props.items.map(function (item) {
-        return <li><a href="/admin#/timeline">
-          <i className={item.icon}></i> <span>{item.name}</span>
-          <small className="label pull-right bg-red">{item.count}</small>
-        </a></li>;
+        return <li>
+          <a href={"/admin#/timeline/"+item.name}>
+            <i className={item.icon}></i> <span>{item.name}</span>
+            <small className="label pull-right bg-red">{item.count}</small>
+          </a>
+        </li>;
       }.bind(this));
 
       return <ul className="sidebar-menu">

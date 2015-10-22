@@ -40,8 +40,8 @@ ReactRouter.run(<Route path="/" handler={App}>
 
   <DefaultRoute handler={ProfileSelector}/>
 
-  <Route path="profile" handler={ProfileSelector}/>
-  <Route path="timeline/:categoryId" handler={TimelineSelector}/>
+  <Route name='profile' path="profile" handler={ProfileSelector}/>
+  <Route name='timeline' path="timeline/:categoryId" handler={TimelineSelector}/>
 
 
   <NotFoundRoute handler={NotFound}/>
