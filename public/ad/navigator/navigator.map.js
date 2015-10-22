@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var ContentMapSelector = React.createClass({
+  var NavigatorMapSelector = React.createClass({
     render: function () {
       return <section className="content-header">
         <h1>
@@ -16,5 +16,5 @@
     }
   });
 
-  React.render(<ContentMapSelector />, document.getElementById('navigator-map'));
+  React.render(<NavigatorMapSelector />, document.getElementById('navigator-map'));
 })();

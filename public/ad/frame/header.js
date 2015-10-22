@@ -1,9 +1,9 @@
 (function () {
   'use strict';
 
-  var ContentSelector = React.createClass({
+  var HeaderSelector = React.createClass({
     postArticle: function () {
-      React.render(React.getComponent('PostArticle'), document.getElementById('content'));
+//      React.render(React.getComponent('PostArticle'), document.getElementById('content'));
     },
     render: function () {
       return <header className="main-header">
@@ -175,5 +175,5 @@
     }
   });
 
-  React.render(<ContentSelector />, document.getElementById('frame-header'));
+  React.render(<HeaderSelector />, document.getElementById('frame-header'));
 })();

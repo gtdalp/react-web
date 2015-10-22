@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var ContentSelector = React.createClass({
+  var FooterSelector = React.createClass({
     render: function () {
       return <footer className="main-footer">
         <div className="pull-right hidden-xs">
@@ -12,5 +12,5 @@
     }
   });
 
-  React.render(<ContentSelector />, document.getElementById('frame-footer'));
+  React.render(<FooterSelector />, document.getElementById('frame-footer'));
 })();

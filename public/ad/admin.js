@@ -1,32 +1,50 @@
-(function () {
-  'use strict';
-  var list = [];
-  var obj = {
-    api1: function () {
-    },
-    api2: function () {
-    },
-    api3: function () {
-    },
-    then: function (fn) {
-      function cb(val) {
-        var next = list.shift(0);
-        next(val);
-      }
+var Route = ReactRouter.Route;
+var RouteHandler = ReactRouter.RouteHandler;
+var DefaultRoute = ReactRouter.DefaultRoute;
+var NotFoundRoute = ReactRouter.NotFoundRoute;
 
-      list.push(fn, cb);
-      fn(cb)
-      return this;
-    }
-  };
+var TimelineSelector = React.component.TimelineSelector;
+var ProfileSelector = React.component.ProfileSelector;
 
-  obj.then(obj.api1).then(obj.api2).then(obj.api3);
+var About = React.createClass({
+  render: function () {
+    return <h2>About</h2>;
+  }
+});
+
+var NotFound = React.createClass({
+  render: function () {
+    return <h2>NotFound</h2>;
+  }
+});
+
+var App = React.createClass({
+  render: function () {
+    return (
+      <div className="content-wrapper">
+        <div id="navigator-map"></div>
+        <div id="content">
+          <RouteHandler/>
+        </div>
+      </div>
+    )
+  }
+});
+
+//function render() {
+//  var route = window.location.hash.substr(1);
+//  React.render(<App route={route}/>, document.body);
+//}
+
+ReactRouter.run(<Route path="/" handler={App}>
+
+  <DefaultRoute handler={ProfileSelector}/>
+
+  <Route path="profile" handler={ProfileSelector}/>
+  <Route path="timeline" handler={TimelineSelector}/>
 
 
-  obj.api1(function (val1) {
-    obj.api2(val1, function () {
-
-    });
-  });
-
-})();
+  <NotFoundRoute handler={NotFound}/>
+</Route>, ReactRouter.HashLocation, function (Root) {
+  React.render(<Root/>, document.getElementById('frame-content'));
+});

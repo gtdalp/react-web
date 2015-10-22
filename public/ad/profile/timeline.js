@@ -71,13 +71,15 @@
 
   var TimelineSelector = React.createClass({
     getInitialState: function () {
-      return {items: []};
+      return {
+        items: []
+      };
     },
     componentDidMount: function () {
       this.fetchData();
     },
     fetchData: function () {
-      $.get('/api/getArticleList?categoryId=' + this.props.dataTag).then(function (data) {
+      $.get('/api/getArticleByCategoryId/' + this.props.dataTag).then(function (data) {
         this.setState({
           items: data.data
         });
