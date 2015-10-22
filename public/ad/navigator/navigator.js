@@ -1,16 +1,6 @@
 (function () {
   'use strict';
 
-  function handleRouter(tag) {
-    return function () {
-      window.location.href = '/admin#/timeline';
-//      var TimelineSelector = React.component.TimelineSelector;
-//      React.render(<TimelineSelector dataTag={tag}/>, document.getElementById('content'));
-    };
-  }
-
-  var Link = ReactRouter.Link;
-
   var NavigatorItemSelector = React.createClass({
 
     render: function () {
@@ -57,7 +47,7 @@
 
           this.setState({items: category.data});
         }.bind(this));
-        this.setState({items: category.data});
+//        this.setState({items: category.data});
       }.bind(this));
     },
     render: function () {

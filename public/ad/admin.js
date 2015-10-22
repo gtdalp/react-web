@@ -6,12 +6,7 @@ var NotFoundRoute = ReactRouter.NotFoundRoute;
 var TimelineSelector = React.component.TimelineSelector;
 var ProfileSelector = React.component.ProfileSelector;
 var PostArticle = React.component.PostArticle;
-
-var NotFound = React.createClass({
-  render: function () {
-    return <h2>NotFound</h2>;
-  }
-});
+var Error500 = React.component.Error500;
 
 var App = React.createClass({
   render: function () {
@@ -40,7 +35,7 @@ ReactRouter.run(<Route path="/" handler={App}>
   <Route name='post-article' path="postarticle" handler={PostArticle}/>
 
 
-  <NotFoundRoute handler={NotFound}/>
+  <NotFoundRoute handler={Error500}/>
 </Route>, ReactRouter.HashLocation, function (Root) {
   React.render(<Root/>, document.getElementById('frame-content'));
 });
