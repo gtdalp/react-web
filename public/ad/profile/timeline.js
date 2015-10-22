@@ -70,6 +70,15 @@
   });
 
   var TimelineSelector = React.createClass({
+    statics: {
+      willTransitionTo: function (transition, params, query, callback) {
+        console.log('willTransitionTo');
+        callback();
+      },
+      willTransitionFrom: function (transition, component) {
+        console.log('willTransitionFrom');
+      }
+    },
     getInitialState: function () {
       return {
         items: []
@@ -79,15 +88,15 @@
       this.fetchData();
     },
     fetchData: function () {
-//      var hash = window.location.hash;
-//      var id = hash.substring(hash.lastIndexOf('/') + 1, hash.length);
-      var id = this.props.params.categoryId;
-
-      $.get('/api/getArticleByCategoryId/' + id).then(function (data) {
-        this.setState({
-          items: data.data
-        });
-      }.bind(this));
+      console.log('timeline');
+      if (this.props.params) {
+        var id = this.props.params.categoryId;
+        $.get('/api/getArticleByCategoryId/' + id).then(function (data) {
+          this.setState({
+            items: data.data
+          });
+        }.bind(this));
+      }
     },
     render: function () {
       return <section className="content">
@@ -107,10 +116,12 @@
     return t[parseInt(Math.random(t.length) * 10)];
   }
 
-//  function render() {
-//    React.render(<TimelineSelector />, document.getElementById('content'));
-//  }
-//
+  function render() {
+    //      var hash = window.location.hash;
+    //      var id = hash.substring(hash.lastIndexOf('/') + 1, hash.length);
+    React.render(<TimelineSelector />, document.getElementById('content'));
+  }
+
 //  window.addEventListener('hashchange', render);
 //  render(); // render initially
 })();
