@@ -16,7 +16,7 @@
     render: function () {
       var lis = this.props.items.map(function (item) {
         return <li>
-          <a href={"/admin#/timeline/"+item.name}>
+          <a href={"/admin#/timeline/"+item._id}>
             <i className={item.icon}></i> <span>{item.name}</span>
             <small className="label pull-right bg-red">{item.count}</small>
           </a>

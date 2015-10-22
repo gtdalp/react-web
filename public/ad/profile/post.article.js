@@ -64,5 +64,6 @@
   });
 
 //  React.registerComponent('PostArticle', <PostArticle/>);
+  React.component.PostArticle = PostArticle;
 
 })();

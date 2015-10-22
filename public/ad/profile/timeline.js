@@ -79,7 +79,10 @@
       this.fetchData();
     },
     fetchData: function () {
-      $.get('/api/getArticleByCategoryId/' + this.props.dataTag).then(function (data) {
+      var hash = window.location.hash;
+      var id = hash.substring(hash.lastIndexOf('/') + 1, hash.length);
+
+      $.get('/api/getArticleByCategoryId/' + id).then(function (data) {
         this.setState({
           items: data.data
         });

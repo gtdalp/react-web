@@ -1,6 +1,5 @@
 --Article
 
-/* 0 */
 {
   "_id" : ObjectId("56270612720e052f2495f181"),
   "category" : "56177c606a58b7cb3826e1a5",
@@ -11,8 +10,7 @@
   "origin" : true,
   "date" : ISODate("2015-10-21T03:27:14.103Z")
 }
-
-/* 1 */
+,
 {
   "_id" : ObjectId("56270620720e052f2495f182"),
   "category" : "56177c606a58b7cb3826e1a5",
@@ -21,10 +19,9 @@
   "content" : "js2 content",
   "visitCount" : 1,
   "origin" : true,
-  "date" : ISODate("2015-10-21T03:27:28.95Z")
+  "date" : ISODate("2015-10-21T03:27:14.103Z")
 }
-
-/* 2 */
+,
 {
   "_id" : ObjectId("56270627720e052f2495f183"),
   "category" : "56177c7f6a58b7cb3826e1a6",
@@ -39,23 +36,20 @@
 
 --Category
 
-/* 0 */
 {
   "_id" : ObjectId("56177c406a58b7cb3826e1a4"),
   "name" : "Reactjs",
   "icon" : "fa fa-calendar",
   "sort" : 1
 }
-
-/* 1 */
+,
 {
   "_id" : ObjectId("56177c606a58b7cb3826e1a5"),
   "name" : "Javasctipt",
   "icon" : "fa fa-envelope",
   "sort" : 1
 }
-
-/* 2 */
+,
 {
   "_id" : ObjectId("56177c7f6a58b7cb3826e1a6"),
   "name" : "C#",
@@ -66,26 +60,12 @@
 
 --User
 
-/* 0 */
-{
-  "_id" : ObjectId("560a41bace654e3f4255023f"),
-  "name" : "1"
-}
-
-/* 1 */
-{
-  "_id" : ObjectId("560a41c2ce654e3f42550240"),
-  "name" : "2"
-}
-
-/* 2 */
 {
   "_id" : ObjectId("560b453483ba879d732a889a"),
   "email" : "andy",
   "password" : "1"
 }
-
-/* 3 */
+,
 {
   "_id" : ObjectId("560b453e83ba879d732a889b"),
   "email" : "microlv",

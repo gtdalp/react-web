@@ -5,12 +5,7 @@ var NotFoundRoute = ReactRouter.NotFoundRoute;
 
 var TimelineSelector = React.component.TimelineSelector;
 var ProfileSelector = React.component.ProfileSelector;
-
-var About = React.createClass({
-  render: function () {
-    return <h2>About</h2>;
-  }
-});
+var PostArticle = React.component.PostArticle;
 
 var NotFound = React.createClass({
   render: function () {
@@ -42,6 +37,7 @@ ReactRouter.run(<Route path="/" handler={App}>
 
   <Route name='profile' path="profile" handler={ProfileSelector}/>
   <Route name='timeline' path="timeline/:categoryId" handler={TimelineSelector}/>
+  <Route name='post-article' path="postarticle" handler={PostArticle}/>
 
 
   <NotFoundRoute handler={NotFound}/>
