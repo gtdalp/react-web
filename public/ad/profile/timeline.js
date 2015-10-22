@@ -79,8 +79,9 @@
       this.fetchData();
     },
     fetchData: function () {
-      var hash = window.location.hash;
-      var id = hash.substring(hash.lastIndexOf('/') + 1, hash.length);
+//      var hash = window.location.hash;
+//      var id = hash.substring(hash.lastIndexOf('/') + 1, hash.length);
+      var id = this.props.params.categoryId;
 
       $.get('/api/getArticleByCategoryId/' + id).then(function (data) {
         this.setState({
@@ -106,4 +107,10 @@
     return t[parseInt(Math.random(t.length) * 10)];
   }
 
+//  function render() {
+//    React.render(<TimelineSelector />, document.getElementById('content'));
+//  }
+//
+//  window.addEventListener('hashchange', render);
+//  render(); // render initially
 })();
