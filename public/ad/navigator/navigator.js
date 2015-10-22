@@ -3,8 +3,9 @@
 
   function handleRouter(tag) {
     return function () {
-      var TimelineSelector = React.component.TimelineSelector;
-      React.render(<TimelineSelector dataTag={tag}/>, document.getElementById('content'));
+      window.location.href = '/admin#/timeline';
+//      var TimelineSelector = React.component.TimelineSelector;
+//      React.render(<TimelineSelector dataTag={tag}/>, document.getElementById('content'));
     };
   }
 
@@ -12,7 +13,7 @@
 
     render: function () {
       var lis = this.props.items.map(function (item) {
-        return <li><a href="#" onClick={handleRouter(item._id)}>
+        return <li><a href="/admin#/timeline">
           <i className={item.icon}></i> <span>{item.name}</span>
           <small className="label pull-right bg-red">{item.count}</small>
         </a></li>;
