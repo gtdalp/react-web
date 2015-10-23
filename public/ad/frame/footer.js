@@ -11,6 +11,7 @@
       </footer>;
     }
   });
+  React.component.FooterSelector = FooterSelector;
 
-  React.render(<FooterSelector />, document.getElementById('frame-footer'));
+//  React.render(<FooterSelector />, document.getElementById('frame-footer'));
 })();

@@ -7,21 +7,31 @@ var TimelineSelector = React.component.TimelineSelector;
 var ProfileSelector = React.component.ProfileSelector;
 var PostArticle = React.component.PostArticle;
 var Error500 = React.component.Error500;
+var HeaderSelector = React.component.HeaderSelector;
+var SideBarSelector = React.component.SideBarSelector;
+var FooterSelector = React.component.FooterSelector;
 
 var App = React.createClass({
   scrollBehavior: ReactRouter.ScrollToTopBehavior,
   render: function () {
     return (
-      <div className="content-wrapper">
-        <div id="navigator-map"></div>
-        <div id="content">
-          <RouteHandler/>
+      <div>
+        <HeaderSelector/>
+        <SideBarSelector/>
+
+        <div id="frame-content">
+          <div className="content-wrapper">
+            <div id="navigator-map"></div>
+            <div id="content">
+              <RouteHandler/>
+            </div>
+          </div>
         </div>
+        <FooterSelector/>
       </div>
     )
   }
 });
-
 
 ReactRouter.run(<Route path="/" handler={App}>
 
@@ -33,5 +43,5 @@ ReactRouter.run(<Route path="/" handler={App}>
 
   <NotFoundRoute handler={Error500}/>
 </Route>, ReactRouter.HashLocation, function (Root) {
-  React.render(<Root/>, document.getElementById('frame-content'));
+  React.render(<Root/>, document.body);
 });

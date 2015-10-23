@@ -70,15 +70,15 @@
   });
 
   var TimelineSelector = React.createClass({
-    statics: {
-      willTransitionTo: function (transition, params, query, callback) {
-        console.log('willTransitionTo');
-        callback();
-      },
-      willTransitionFrom: function (transition, component) {
-        console.log('willTransitionFrom');
-      }
-    },
+//    statics: {
+//      willTransitionTo: function (transition, params, query, callback) {
+//        console.log('willTransitionTo');
+//        callback();
+//      },
+//      willTransitionFrom: function (transition, component) {
+//        console.log('willTransitionFrom');
+//      }
+//    },
     getInitialState: function () {
       return {
         items: []
@@ -87,11 +87,23 @@
     componentDidMount: function () {
       this.fetchData();
     },
+//    componentWillReceiveProps: function (nextProps) {
+//      this.fetchData();
+//    },
+//    shouldComponentUpdate: function (nextProps, nextState) {
+//      console.log(nextProps);
+//      return true;
+//    },
+//    componentWillUpdate: function (nextProps, nextState) {
+//      console.log(nextProps);
+//    },
+//    componentDidUpdate: function (prevProps, prevState) {
+//      console.log(prevState);
+//    },
     fetchData: function () {
       console.log('timeline');
       if (this.props.params) {
-        var id = this.props.params.categoryId;
-        $.get('/api/getArticleByCategoryId/' + id).then(function (data) {
+        $.get('/api/getArticleByCategoryId/' + this.props.params.categoryId).then(function (data) {
           this.setState({
             items: data.data
           });
@@ -103,6 +115,7 @@
         <div className="row">
           <div className="col-md-12">
             <TimeLineItemSelector items={this.state.items}/>
+
           </div>
         </div>
       </section>;
@@ -116,12 +129,4 @@
     return t[parseInt(Math.random(t.length) * 10)];
   }
 
-  function render() {
-    //      var hash = window.location.hash;
-    //      var id = hash.substring(hash.lastIndexOf('/') + 1, hash.length);
-    React.render(<TimelineSelector />, document.getElementById('content'));
-  }
-
-//  window.addEventListener('hashchange', render);
-//  render(); // render initially
 })();
