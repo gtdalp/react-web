@@ -85,30 +85,28 @@
       };
     },
     componentDidMount: function () {
-      this.fetchData();
+      this.fetchData(this.props.params.categoryId);
     },
-//    componentWillReceiveProps: function (nextProps) {
-//      this.fetchData();
-//    },
-//    shouldComponentUpdate: function (nextProps, nextState) {
-//      console.log(nextProps);
-//      return true;
-//    },
-//    componentWillUpdate: function (nextProps, nextState) {
-//      console.log(nextProps);
-//    },
-//    componentDidUpdate: function (prevProps, prevState) {
-//      console.log(prevState);
-//    },
-    fetchData: function () {
-      console.log('timeline');
-      if (this.props.params) {
-        $.get('/api/getArticleByCategoryId/' + this.props.params.categoryId).then(function (data) {
-          this.setState({
-            items: data.data
-          });
-        }.bind(this));
-      }
+    componentWillReceiveProps: function (nextProps) {
+      console.log('1');
+      this.fetchData(nextProps.params.categoryId);
+    },
+    shouldComponentUpdate: function (nextProps, nextState) {
+      console.log('2');
+      return true;
+    },
+    componentWillUpdate: function (nextProps, nextState) {
+      console.log('3');
+    },
+    componentDidUpdate: function (prevProps, prevState) {
+      console.log('4');
+    },
+    fetchData: function (categoryId) {
+      $.get('/api/getArticleByCategoryId/' + categoryId).then(function (data) {
+        this.setState({
+          items: data.data
+        });
+      }.bind(this));
     },
     render: function () {
       return <section className="content">
