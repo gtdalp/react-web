@@ -70,15 +70,6 @@
   });
 
   var TimelineSelector = React.createClass({
-//    statics: {
-//      willTransitionTo: function (transition, params, query, callback) {
-//        console.log('willTransitionTo');
-//        callback();
-//      },
-//      willTransitionFrom: function (transition, component) {
-//        console.log('willTransitionFrom');
-//      }
-//    },
     getInitialState: function () {
       return {
         items: []
@@ -88,18 +79,7 @@
       this.fetchData(this.props.params.categoryId);
     },
     componentWillReceiveProps: function (nextProps) {
-      console.log('1');
       this.fetchData(nextProps.params.categoryId);
-    },
-    shouldComponentUpdate: function (nextProps, nextState) {
-      console.log('2');
-      return true;
-    },
-    componentWillUpdate: function (nextProps, nextState) {
-      console.log('3');
-    },
-    componentDidUpdate: function (prevProps, prevState) {
-      console.log('4');
     },
     fetchData: function (categoryId) {
       $.get('/api/getArticleByCategoryId/' + categoryId).then(function (data) {
@@ -120,7 +100,6 @@
     }
   });
 
-  //React.registerComponent('TimelineSelector', TimelineSelector);
   React.component.TimelineSelector = TimelineSelector;
 
   function round(t) {

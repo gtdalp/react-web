@@ -44,7 +44,7 @@
 
     <Route name='profile' path="profile" handler={ProfileSelector}/>
     <Route name='timeline' path="timeline/:categoryId" handler={TimelineSelector}/>
-    <Route name='post-article' path="postarticle" handler={PostArticle}/>
+    <Route name='postarticle' path="postarticle" handler={PostArticle}/>
 
     <NotFoundRoute handler={Error500}/>
   </Route>, ReactRouter.HashLocation, function (Root) {

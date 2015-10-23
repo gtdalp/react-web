@@ -3,14 +3,14 @@
  */
 (function () {
   'use strict';
+  var MarkdownSelector = React.component.MarkdownSelector;
 
   var PostArticleSelectOption = React.createClass({
-
     render: function () {
-      var that = this;
-      var lis = this.state.items.map(function (item) {
-        return <options value={item._id}>{item.name}</options>;
+      var lis = this.props.items.map(function (item) {
+        return <option value={item._id}>{item.name}</option>;
       });
+      lis.unshift(<option value="0">Please Select A Category!</option>)
       return <select className="form-control">
         {lis}
       </select>;
@@ -25,8 +25,8 @@
       this.fetchData();
     },
     fetchData: function () {
-      $.get('/api/getCategory').then(function (data) {
-        this.setState({items: data.data});
+      $.get('/api/getCategory').then(function (response) {
+        this.setState({items: response.data});
       }.bind(this));
     },
     render: function () {
@@ -50,10 +50,9 @@
                   </div>
 
                   <div className="form-group">
-                    <label>Textarea</label>
-                    <textarea className="form-control" rows="3" placeholder="Enter ..."></textarea>
+                    <label>Content</label>
+                    <MarkdownSelector/>
                   </div>
-
                 </form>
               </div>
             </div>
@@ -63,7 +62,6 @@
     }
   });
 
-//  React.registerComponent('PostArticle', <PostArticle/>);
   React.component.PostArticle = PostArticle;
 
 })();

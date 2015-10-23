@@ -2,9 +2,6 @@
   'use strict';
 
   var HeaderSelector = React.createClass({
-    postArticle: function () {
-//      React.render(React.getComponent('PostArticle'), document.getElementById('content'));
-    },
     render: function () {
       return <header className="main-header">
         <nav className="navbar navbar-static-top" role="navigation">
@@ -165,7 +162,7 @@
                 </ul>
               </li>
               <li>
-                <a href="#" onClick={this.postArticle} data-toggle="control-sidebar"><i className="fa fa-gears"></i>PostArticle</a>
+                <a href="/admin#/postarticle" data-toggle="control-sidebar"><i className="fa fa-gears"></i>PostArticle</a>
               </li>
             </ul>
           </div>

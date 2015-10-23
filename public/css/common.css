@@ -98,3 +98,7 @@ body {
 .error-page > .error-content {
     margin-left: 0;
 }
+
+.markdown-control {
+    min-height: 500px;
+}
