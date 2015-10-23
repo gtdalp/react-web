@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var NavigatorMapSelector = React.createClass({
+  var NavMapSelector = React.createClass({
     render: function () {
       return <section className="content-header">
         <h1>
@@ -16,5 +16,5 @@
     }
   });
 
-//  React.render(<NavigatorMapSelector />, document.getElementById('navigator-map'));
+  React.component.NavMapSelector = NavMapSelector;
 })();

@@ -174,6 +174,4 @@
     }
   });
   React.component.HeaderSelector = HeaderSelector;
-
-//  React.render(<HeaderSelector />, document.getElementById('frame-header'));
 })();
