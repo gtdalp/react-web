@@ -15,6 +15,20 @@
   var FooterSelector = React.component.FooterSelector;
   var NavMapSelector = React.component.NavMapSelector;
 
+  var ContentSelector = React.createClass({
+    render: function () {
+      return <div id="frame-content">
+        <div className="content-wrapper">
+          <NavMapSelector/>
+
+          <div id="content">
+            <RouteHandler/>
+          </div>
+        </div>
+      </div>
+    }
+  });
+
   var App = React.createClass({
     scrollBehavior: ReactRouter.ScrollToTopBehavior,
     render: function () {
@@ -22,16 +36,7 @@
         <div>
           <HeaderSelector/>
           <SideBarSelector/>
-
-          <div id="frame-content">
-            <div className="content-wrapper">
-              <NavMapSelector/>
-
-              <div id="content">
-                <RouteHandler/>
-              </div>
-            </div>
-          </div>
+          <ContentSelector/>
           <FooterSelector/>
         </div>
       )
@@ -50,5 +55,6 @@
   </Route>, ReactRouter.HashLocation, function (Root) {
     React.render(<Root/>, document.body);
   });
+
 })();
 
