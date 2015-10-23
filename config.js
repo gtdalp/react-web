@@ -7,5 +7,5 @@
 //process.env.release = true;
 
 module.exports = {
-  dbconnect: 'mongodb://127.0.0.1/reactweb'
+  dbconnect: 'mongodb://heroku_kjqc19v7:heroku_kjqc19v7@ds037824.mongolab.com:37824/heroku_kjqc19v7'
 };
