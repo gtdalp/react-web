@@ -8,7 +8,7 @@
 
   var TimelineSelector = React.component.TimelineSelector;
   var ProfileSelector = React.component.ProfileSelector;
-  var PostArticle = React.component.PostArticle;
+  var PostArticleSelector = React.component.PostArticleSelector;
   var Error500 = React.component.Error500;
   var HeaderSelector = React.component.HeaderSelector;
   var SideBarSelector = React.component.SideBarSelector;
@@ -44,7 +44,7 @@
 
     <Route name='profile' path="profile" handler={ProfileSelector}/>
     <Route name='timeline' path="timeline/:categoryId" handler={TimelineSelector}/>
-    <Route name='postarticle' path="postarticle" handler={PostArticle}/>
+    <Route name='postarticle' path="postarticle" handler={PostArticleSelector}/>
 
     <NotFoundRoute handler={Error500}/>
   </Route>, ReactRouter.HashLocation, function (Root) {

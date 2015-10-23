@@ -5,7 +5,7 @@
   'use strict';
   var MarkdownSelector = React.component.MarkdownSelector;
 
-  var PostArticleSelectOption = React.createClass({
+  var PostCategorySelector = React.createClass({
     render: function () {
       var lis = this.props.items.map(function (item) {
         return <option value={item._id}>{item.name}</option>;
@@ -17,7 +17,7 @@
     }
   });
 
-  var PostArticle = React.createClass({
+  var PostArticleSelector = React.createClass({
     getInitialState: function () {
       return {items: []};
     },
@@ -35,18 +35,18 @@
           <div className="col-md-12">
             <div className="box box-warning">
               <div className="box-header with-border">
-                <h3 className="box-title">General Elements</h3>
+                <h3 className="box-title">Post Article</h3>
               </div>
               <div className="box-body">
                 <form role="form">
                   <div className="form-group">
-                    <label>Text</label>
+                    <label>Title</label>
                     <input type="text" className="form-control" placeholder="Enter ..."/>
                   </div>
 
                   <div className="form-group">
                     <label>Select</label>
-                    <PostArticleSelectOption items={this.state.items}/>
+                    <PostCategorySelector items={this.state.items}/>
                   </div>
 
                   <div className="form-group">
@@ -62,6 +62,6 @@
     }
   });
 
-  React.component.PostArticle = PostArticle;
+  React.component.PostArticleSelector = PostArticleSelector;
 
 })();
