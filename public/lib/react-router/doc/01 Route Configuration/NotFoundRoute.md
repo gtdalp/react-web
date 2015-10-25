@@ -42,5 +42,5 @@ Example
 ```
 
 The last `NotFoundRoute` will render inside the `App`, the first will
-render inside of `Course`.
+rendering inside of `Course`.
 

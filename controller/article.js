@@ -27,7 +27,7 @@ function getArticleList(req, res) {
 }
 
 function getArticleByCategoryId(req, res) {
-  dao.getArticleByCategoryId({categoryId: req.params.categoryId}).then(function (data) {
+  dao.getArticleByCategoryId({category: req.params.categoryId}).then(function (data) {
     var obj = {code: '10086', msg: 'failed'};
     if (data) {
       obj.code = '8000';

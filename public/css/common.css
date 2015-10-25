@@ -90,3 +90,15 @@ body {
     background-color: #fff;
     border-radius: 4px;
 }
+
+.error-page > .headline {
+    float: unset;
+}
+
+.error-page > .error-content {
+    margin-left: 0;
+}
+
+.markdown-control {
+    min-height: 500px;
+}

@@ -39,6 +39,5 @@
   },
   "_source": "git://github.com/almasaeed2010/AdminLTE.git",
   "_target": "~2.3.0",
-  "_originalSource": "admin-lte",
-  "_direct": true
+  "_originalSource": "admin-lte"
 }

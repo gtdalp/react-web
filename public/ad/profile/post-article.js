@@ -3,21 +3,21 @@
  */
 (function () {
   'use strict';
+  var MarkdownSelector = React.component.MarkdownSelector;
 
-  var PostArticleSelectOption = React.createClass({
-
+  var PostCategorySelector = React.createClass({
     render: function () {
-      var that = this;
-      var lis = this.state.items.map(function (item) {
-        return <options value={item._id}>{item.name}</options>;
+      var lis = this.props.items.map(function (item) {
+        return <option value={item._id}>{item.name}</option>;
       });
+      lis.unshift(<option value="0">Please Select A Category!</option>)
       return <select className="form-control">
         {lis}
       </select>;
     }
   });
 
-  var PostArticle = React.createClass({
+  var PostArticleSelector = React.createClass({
     getInitialState: function () {
       return {items: []};
     },
@@ -25,8 +25,8 @@
       this.fetchData();
     },
     fetchData: function () {
-      $.get('/api/getCategory').then(function (data) {
-        this.setState({items: data.data});
+      $.get('/api/getCategory').then(function (response) {
+        this.setState({items: response.data});
       }.bind(this));
     },
     render: function () {
@@ -35,25 +35,24 @@
           <div className="col-md-12">
             <div className="box box-warning">
               <div className="box-header with-border">
-                <h3 className="box-title">General Elements</h3>
+                <h3 className="box-title">Post Article</h3>
               </div>
               <div className="box-body">
                 <form role="form">
                   <div className="form-group">
-                    <label>Text</label>
+                    <label>Title</label>
                     <input type="text" className="form-control" placeholder="Enter ..."/>
                   </div>
 
                   <div className="form-group">
                     <label>Select</label>
-                    <PostArticleSelectOption items={this.state.items}/>
+                    <PostCategorySelector items={this.state.items}/>
                   </div>
 
                   <div className="form-group">
-                    <label>Textarea</label>
-                    <textarea className="form-control" rows="3" placeholder="Enter ..."></textarea>
+                    <label>Content</label>
+                    <MarkdownSelector/>
                   </div>
-
                 </form>
               </div>
             </div>
@@ -63,6 +62,6 @@
     }
   });
 
-//  React.registerComponent('PostArticle', <PostArticle/>);
+  React.component.PostArticleSelector = PostArticleSelector;
 
 })();

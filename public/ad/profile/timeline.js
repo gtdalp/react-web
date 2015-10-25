@@ -71,13 +71,18 @@
 
   var TimelineSelector = React.createClass({
     getInitialState: function () {
-      return {items: []};
+      return {
+        items: []
+      };
     },
     componentDidMount: function () {
-      this.fetchData();
+      this.fetchData(this.props.params.categoryId);
     },
-    fetchData: function () {
-      $.get('/api/getArticleList?categoryId=' + this.props.dataTag).then(function (data) {
+    componentWillReceiveProps: function (nextProps) {
+      this.fetchData(nextProps.params.categoryId);
+    },
+    fetchData: function (categoryId) {
+      $.get('/api/getArticleByCategoryId/' + categoryId).then(function (data) {
         this.setState({
           items: data.data
         });
@@ -88,13 +93,13 @@
         <div className="row">
           <div className="col-md-12">
             <TimeLineItemSelector items={this.state.items}/>
+
           </div>
         </div>
       </section>;
     }
   });
 
-  //React.registerComponent('TimelineSelector', TimelineSelector);
   React.component.TimelineSelector = TimelineSelector;
 
   function round(t) {

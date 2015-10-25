@@ -10,5 +10,6 @@
   },
   "_source": "git://github.com/kriskowal/q.git",
   "_target": "~2.0.2",
-  "_originalSource": "q"
+  "_originalSource": "q",
+  "_direct": true
 }
