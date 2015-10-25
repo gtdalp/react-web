@@ -70,6 +70,15 @@
   });
 
   var TimelineSelector = React.createClass({
+    statics: {
+      willTransitionTo: function (transition, params, query, callback) {
+        console.log('app willTransitionTo');
+        callback();
+      },
+      willTransitionFrom: function (transition, component) {
+        console.log('app willTransitionFrom');
+      }
+    },
     getInitialState: function () {
       return {
         items: []
