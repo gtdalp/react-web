@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Created by Microlv on 2015/10/26.
  */
 
@@ -35,20 +35,20 @@ var icons = [
 ];
 
 var colorStyle = [
-  'rgba(0, 115, 183, 0.35)',
-  'rgba(0, 166, 90, 0.35)',
-  'rgba(0, 200, 43, 0.35)',
-  'rgba(0, 100, 31, 0.35)',
-  'rgba(0, 56, 71, 0.35)',
-  'rgba(0, 30, 111, 0.35)',
-  'rgba(200, 11, 76, 0.35)',
-  'rgba(150, 115, 183, 0.35)',
-  'rgba(140, 40, 30, 0.35)',
-  'rgba(40, 120, 100, 0.35)',
-  'rgba(0, 115, 23, 0.35)',
-  'rgba(23, 190, 23, 0.35)',
-  'rgba(40, 30, 183, 0.35)',
-  'rgba(0, 56, 130, 0.35)',
+  'rgba(0, 115, 183, 0.6)',
+  'rgba(0, 166, 90, 0.6)',
+  'rgba(0, 200, 43, 0.6)',
+  'rgba(0, 100, 31, 0.6)',
+  'rgba(0, 56, 71, 0.6)',
+  'rgba(0, 30, 111, 0.6)',
+  'rgba(200, 11, 76, 0.6)',
+  'rgba(150, 115, 183, 0.6)',
+  'rgba(140, 40, 30, 0.6)',
+  'rgba(40, 120, 100, 0.6)',
+  'rgba(0, 115, 23, 0.6)',
+  'rgba(23, 190, 23, 0.6)',
+  'rgba(40, 30, 183, 0.6)',
+  'rgba(0, 56, 130, 0.6)',
 ];
 
 var ArticleItem = React.createClass({
@@ -104,19 +104,25 @@ var Content = React.createClass({
     return <article className="container-info">
       <article className="col-md-3 profile-info">
         <div className="row img-box">
-          <h3>Microlv</h3>
-          <h5>Web,Nodejs,React,Angular</h5>
+          <h3><i className="fa fa-git-square"></i> <a href="https://github.com/microlv">Microlv</a></h3>
+          <h5><i className="fa fa-star-o"></i>Web,Nodejs,React,Angular</h5>
 
           <div className="img-circle">
             <img className="img-circle" src="images/me.jpg"/>
           </div>
         </div>
         <div className="row text-center profile-info-detail">
-          <h3 className="profile-username">hello</h3>
+          <h3 className="profile-username">About Me</h3>
 
-          <p className="text-muted text-center">hello</p>
+          <p className="text-muted text-center">Web/Nodejs/React/Angular coder</p>
 
-          <a href="#" className="btn btn-primary btn-block"><b>hello</b></a>
+          <p className="text-muted text-center">据说玩github逼格较高，所以呢~</p>
+          <a href="#" className="btn btn-primary btn-block"><b>react-web</b></a>
+          <a href="#" className="btn btn-primary btn-block"><b>ng-web</b></a>
+          <a href="#" className="btn btn-primary btn-block"><b>gulp-requirejs-combine</b></a>
+          <a href="#" className="btn btn-primary btn-block"><b>gulp-folder</b></a>
+          <a href="#" className="btn btn-primary btn-block"><b>ngMessage</b></a>
+
         </div>
         <div id="sidebar"></div>
       </article>
