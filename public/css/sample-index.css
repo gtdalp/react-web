@@ -4,7 +4,7 @@ html, body {
 }
 
 .profile-info {
-    background-color: #999988;
+    background-color: #ebeff4;
 }
 
 .container-info {
@@ -13,6 +13,12 @@ html, body {
 
 .container-info > article {
     height: 100%;
+}
+
+.content-info {
+    padding: 15px;
+    border-radius: 0;
+    overflow: auto;
 }
 
 .img-circle {
@@ -26,20 +32,23 @@ html, body {
 
 .img-box {
     height: 200px;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 2px solid #00bfee;
     position: relative;
 }
 
 .article {
-    border: 1px solid #0000ff;
+    border: 1px solid #c3c7cc;
+    border-radius: 5px;
+    margin: 20px 0;
 }
 
 .article-title {
-    border-left: 3px solid #d5d59d;
+    border-left: 3px solid #00a55a;
+    border-radius: 2px 0;
 }
 
 .article:hover {
-    border: 1px solid #006600;
+    border: 1px solid #66afe9;
     cursor: pointer;
 }
 
@@ -47,7 +56,3 @@ html, body {
     padding: 10px;
 }
 
-.content-info {
-    padding: 15px;
-    border-radius: 0;
-}
