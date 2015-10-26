@@ -1,0 +1,53 @@
+html, body {
+    height: 100%;
+    margin: auto;
+}
+
+.profile-info {
+    background-color: #999988;
+}
+
+.container-info {
+    height: 100%;
+}
+
+.container-info > article {
+    height: 100%;
+}
+
+.img-circle {
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    bottom: -42px;
+    left: 40%;
+}
+
+.img-box {
+    height: 200px;
+    border-bottom: 2px solid #ccc;
+    position: relative;
+}
+
+.article {
+    border: 1px solid #0000ff;
+}
+
+.article-title {
+    border-left: 3px solid #d5d59d;
+}
+
+.article:hover {
+    border: 1px solid #006600;
+    cursor: pointer;
+}
+
+.article > div {
+    padding: 10px;
+}
+
+.content-info {
+    padding: 15px;
+    border-radius: 0;
+}
