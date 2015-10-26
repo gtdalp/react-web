@@ -2,6 +2,10 @@ body {
     background-color: #ecf0f5;
 }
 
+body > div {
+    /*position: relative;*/
+}
+
 .login-page, .register-page {
     background-color: transparent;
 }
@@ -101,4 +105,12 @@ body {
 
 .markdown-control {
     min-height: 500px;
+}
+
+.user-footer {
+    text-align: center;
+}
+
+.user-footer a {
+    margin: 0 3px;
 }
