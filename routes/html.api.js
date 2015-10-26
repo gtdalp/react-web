@@ -15,6 +15,7 @@ function render(html) {
 //client
 //view folder
 router.get('/', render('index'));
+router.get('/sample', render('sample-index'));
 
 //admin
 //can't use admin,because the it conflice with public admin

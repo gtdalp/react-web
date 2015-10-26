@@ -1,0 +1,94 @@
+html, body {
+    height: 100%;
+    margin: auto;
+}
+
+body > div {
+    height: 100%;
+}
+
+footer {
+    background-color: #222d32;
+    border-top: 3px solid #f29b12;
+    height: 45px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    color: #909090;
+}
+
+.profile-info {
+    background-color: #ebeff4;
+}
+
+.profile-info-detail {
+    margin-top: 80px;
+}
+
+.container-info {
+    height: 100%;
+}
+
+.container-info > article {
+    height: 100%;
+}
+
+.content-info {
+    padding: 15px;
+    border-radius: 0;
+    overflow: auto;
+}
+
+.img-box {
+    height: 200px;
+    background-color: #7693A0;
+    border-bottom: 2px solid #00bfee;
+    position: relative;
+}
+
+.img-box > div {
+    background-color: #ebeff4;
+    border: 2px solid #00bfee;
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    bottom: -62px;
+    left: 36%;
+    padding: 3px;
+}
+
+.img-circle {
+    border-radius: 50%;
+    height: 110px;
+    width: 110px;
+}
+
+.article {
+    border: 1px solid #c3c7cc;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.article-title {
+    border-top: 3px solid #d2d6de;
+    border-radius: 3px;
+    border-top-color: #dd4b39;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.article-title > div {
+    float: right;
+    color: #777
+}
+
+.article:hover {
+    border: 1px solid #66afe9;
+    cursor: pointer;
+}
+
+.article > div {
+    padding: 15px;
+}
+

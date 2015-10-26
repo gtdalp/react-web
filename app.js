@@ -10,6 +10,7 @@ var htmlApi = require('./routes/html.api');
 var logicApi = require('./routes/logic.api');
 
 var config = require('./config');
+var session = require('express-session');
 
 var app = express();
 
@@ -26,6 +27,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+var sess = {
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {}
+};
+
+if (app.get('env') === 'production') {
+  app.set('trust proxy', 1); // trust first proxy
+  sess.cookie.secure = true;// serve secure cookies
+}
+
+app.use(session(sess));
 
 app.use('/', htmlApi);
 app.use('/api', logicApi);
