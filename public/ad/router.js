@@ -42,7 +42,7 @@
 //    },
     render: function () {
       return (
-        <div>
+        <div className="wrapper">
           <HeaderSelector/>
           <SideBarSelector/>
           <ContentSelector/>

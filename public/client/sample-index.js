@@ -19,24 +19,60 @@ var colors = [
   'bg-maroon',
   'bg-black'
 ];
+var icons = [
+  'fa-star-o',
+  'fa-thumbs-o-up',
+  'fa-comments',
+  'fa-envelope',
+  'fa-user',
+  'fa-video-camera',
+  'fa-clock-o',
+  'fa-heart-o',
+  'fa-thumb-tack',
+  'fa-external-link',
+  'fa-trophy',
+  'fa-cogs'
+];
+
+var colorStyle = [
+  'rgba(0, 115, 183, 0.35)',
+  'rgba(0, 166, 90, 0.35)',
+  'rgba(0, 200, 43, 0.35)',
+  'rgba(0, 100, 31, 0.35)',
+  'rgba(0, 56, 71, 0.35)',
+  'rgba(0, 30, 111, 0.35)',
+  'rgba(200, 11, 76, 0.35)',
+  'rgba(150, 115, 183, 0.35)',
+  'rgba(140, 40, 30, 0.35)',
+  'rgba(40, 120, 100, 0.35)',
+  'rgba(0, 115, 23, 0.35)',
+  'rgba(23, 190, 23, 0.35)',
+  'rgba(40, 30, 183, 0.35)',
+  'rgba(0, 56, 130, 0.35)',
+];
 
 var ArticleItem = React.createClass({
   render: function () {
     var lis = this.props.items.map(function (item) {
-      return <div className="article animated slideInUp">
-        <div className={"article-title "+ round(colors)}>{item.title}
-          <div>
+      var backColor = round(colorStyle);
+      return <div className="article animated slideInUp" style={{'border-color':backColor+' !important'}}>
+        <div className="article-title" style={{'border-color':backColor+' !important'}}>{item.title}
+          <div className="article-title-time">
             <i className="fa fa-clock-o"></i>
             <span>
               {item.date.toLocaleDateString()}
             </span>
           </div>
         </div>
-        <div>
+        <div className="article-content">
           <p>
             {item.content}
           </p>
         </div>
+        <i className={"fa fa-icons "+ round(icons)}></i>
+        <a href="#" className={"small-box-footer"} style={{'background':round(colorStyle)+' !important'}}>More info
+          <i className="fa fa-arrow-circle-right"></i>
+        </a>
       </div>;
     });
 
@@ -68,8 +104,11 @@ var Content = React.createClass({
     return <article className="container-info">
       <article className="col-md-3 profile-info">
         <div className="row img-box">
+          <h3>Microlv</h3>
+          <h5>Web,Nodejs,React,Angular</h5>
+
           <div className="img-circle">
-            <img className="img-circle" src="images/me11.jpg"/>
+            <img className="img-circle" src="images/me.jpg"/>
           </div>
         </div>
         <div className="row text-center profile-info-detail">
@@ -112,4 +151,4 @@ React.render(<App/>, document.body);
 
 function round(t) {
   return t[parseInt(Math.random(t.length) * 10)];
-}
+};
