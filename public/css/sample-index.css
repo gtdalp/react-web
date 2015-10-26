@@ -7,6 +7,10 @@ html, body {
     background-color: #ebeff4;
 }
 
+.profile-info-detail {
+    margin-top: 80px;
+}
+
 .container-info {
     height: 100%;
 }
@@ -21,19 +25,29 @@ html, body {
     overflow: auto;
 }
 
-.img-circle {
-    border-radius: 50%;
-    height: 80px;
-    width: 80px;
-    position: absolute;
-    bottom: -42px;
-    left: 40%;
-}
-
 .img-box {
     height: 200px;
+    background-color: #f6eac5;
     border-bottom: 2px solid #00bfee;
     position: relative;
+}
+
+.img-box > div {
+    background-color: #ebeff4;
+    border: 2px solid #00bfee;
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    bottom: -62px;
+    left: 36%;
+    padding: 3px;
+}
+
+.img-circle {
+    border-radius: 50%;
+    height: 110px;
+    width: 110px;
 }
 
 .article {
@@ -45,6 +59,11 @@ html, body {
 .article-title {
     border-left: 3px solid #00a55a;
     border-radius: 2px 0;
+}
+
+.article-title > div {
+    float: right;
+    color: #777
 }
 
 .article:hover {
