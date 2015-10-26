@@ -3,6 +3,21 @@ html, body {
     margin: auto;
 }
 
+body > div {
+    height: 100%;
+}
+
+footer {
+    background-color: #222d32;
+    border-top: 3px solid #f29b12;
+    height: 45px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    color: #909090;
+}
+
 .profile-info {
     background-color: #ebeff4;
 }
@@ -27,7 +42,7 @@ html, body {
 
 .img-box {
     height: 200px;
-    background-color: #f6eac5;
+    background-color: #7693A0;
     border-bottom: 2px solid #00bfee;
     position: relative;
 }
@@ -57,8 +72,10 @@ html, body {
 }
 
 .article-title {
-    border-left: 3px solid #00a55a;
-    border-radius: 2px 0;
+    border-top: 3px solid #d2d6de;
+    border-radius: 3px;
+    border-top-color: #dd4b39;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 
 .article-title > div {
@@ -72,6 +89,6 @@ html, body {
 }
 
 .article > div {
-    padding: 10px;
+    padding: 15px;
 }
 
