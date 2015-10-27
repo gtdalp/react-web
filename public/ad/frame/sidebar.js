@@ -14,14 +14,16 @@
       }.bind(this));
 
       return <ul className="sidebar-menu">
-        <li className="header">Category</li>
+        <li className="header">Tech Category</li>
         {lis}
-        <li className="header">Demo</li>
-        {/*
-         <li><a href="#"><i className="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-         <li><a href="#"><i className="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-         <li><a href="#"><i className="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
-         */}
+        <li className="header">GitHub Project</li>
+
+        <li><a href="https://github.com/microlv/react-web"><i>react-web</i></a></li>
+        <li><a href="https://github.com/microlv/ng-web"><i>ng-web</i></a></li>
+        <li><a href="https://github.com/microlv/gulp-requirejs-combine"><i>gulp-requirejs-combine</i></a></li>
+        <li><a href="https://github.com/microlv/gulp-ng-template-html"><i>gulp-ng-template-html</i></a></li>
+        <li><a href="https://github.com/microlv/gulp-folder"><i>gulp-folder</i></a></li>
+        <li><a href="https://github.com/microlv/ngMessage"><i>ngMessage</i></a></li>
       </ul>;
     }
   });

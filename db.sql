@@ -36,27 +36,45 @@
 
 --Category
 
+/* 1 */
 {
-  "_id" : ObjectId("56177c406a58b7cb3826e1a4"),
-  "name" : "Reactjs",
-  "icon" : "fa fa-calendar",
-  "sort" : 1
-}
-,
-{
-  "_id" : ObjectId("56177c606a58b7cb3826e1a5"),
-  "name" : "Javasctipt",
-  "icon" : "fa fa-envelope",
-  "sort" : 1
-}
-,
-{
-  "_id" : ObjectId("56177c7f6a58b7cb3826e1a6"),
-  "name" : "C#",
-  "icon" : "fa fa-th",
-  "sort" : 1
+    "_id" : ObjectId("56177c406a58b7cb3826e1a4"),
+    "name" : "Reactjs",
+    "icon" : "fa fa-calendar",
+    "sort" : 1
 }
 
+/* 2 */
+{
+    "_id" : ObjectId("56177c606a58b7cb3826e1a5"),
+    "name" : "Javasctipt",
+    "icon" : "fa fa-envelope",
+    "sort" : 1
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("56177c7f6a58b7cb3826e1a6"),
+    "name" : "C#",
+    "icon" : "fa fa-th",
+    "sort" : 1
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("562f9ebecb0f07ee4e813507"),
+    "name" : "React",
+    "icon" : "fa fa-trophy",
+    "sort" : 2
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("562f9ee0cb0f07ee4e813508"),
+    "name" : "Nodejs",
+    "icon" : "fa fa-envelope",
+    "sort" : 3
+}
 
 --User
 
