@@ -117,11 +117,11 @@ var Content = React.createClass({
           <p className="text-muted text-center">Web/Nodejs/React/Angular coder</p>
 
           <p className="text-muted text-center">据说玩github逼格较高，所以呢~</p>
-          <a href="#" className="btn btn-primary btn-block"><b>react-web</b></a>
-          <a href="#" className="btn btn-primary btn-block"><b>ng-web</b></a>
-          <a href="#" className="btn btn-primary btn-block"><b>gulp-requirejs-combine</b></a>
-          <a href="#" className="btn btn-primary btn-block"><b>gulp-folder</b></a>
-          <a href="#" className="btn btn-primary btn-block"><b>ngMessage</b></a>
+          <a href="#" className="project-primary"><b>react-web</b></a>
+          <a href="#" className="project-primary"><b>ng-web</b></a>
+          <a href="#" className="project-primary"><b>gulp-requirejs-combine</b></a>
+          <a href="#" className="project-primary"><b>gulp-folder</b></a>
+          <a href="#" className="project-primary"><b>ngMessage</b></a>
 
         </div>
         <div id="sidebar"></div>
