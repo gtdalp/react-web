@@ -50,7 +50,7 @@
           {item.content}...
         </div>
         <div className="timeline-footer">
-          <a className="btn btn-primary btn-xs">Read more</a>
+          <a href={"#/articledetail/"+item._id} className="btn btn-primary btn-xs">Read more</a>
         </div>
       </div>;
     },

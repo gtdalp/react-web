@@ -44,8 +44,17 @@ function getArticleByCategoryId(obj) {
   return d.promise;
 }
 
+function getArticleDetailById(obj) {
+  var d = q.defer();
+  mongo.collection('Article').findOne(obj, function (err, data) {
+    err ? d.reject(err) : d.resolve(data);
+  });
+  return d.promise;
+}
+
 module.exports = {
   getArticleCount: getArticleCount,
   getArticleList: getArticleList,
-  getArticleByCategoryId: getArticleByCategoryId
+  getArticleByCategoryId: getArticleByCategoryId,
+  getArticleDetailById: getArticleDetailById
 };
