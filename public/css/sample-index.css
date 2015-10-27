@@ -13,7 +13,7 @@ body a, span {
 
 footer {
     background-color: #222d32;
-    border-top: 3px solid #f29b12;
+    border-top: 3px solid #0177B5;
     height: 45px;
     width: 100%;
     position: fixed;
@@ -24,6 +24,7 @@ footer {
 
 .profile-info {
     background-color: #ebeff4;
+    z-index: 9999999;
 }
 
 .profile-info-detail {
@@ -83,13 +84,13 @@ footer {
 }
 
 .article {
-    border: 1px solid #0099be;
+    border: 1px solid #ccc;
     border-radius: 5px;
     margin: 20px 0;
 }
 
 .article-title {
-    border-top: 3px solid #0099be;
+    border-top: 3px solid #FC9D41;
     border-radius: 3px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
@@ -100,7 +101,6 @@ footer {
 
 .article-title > div {
     float: right;
-    background-color:;
     color: #777
 }
 
@@ -115,6 +115,11 @@ footer {
 
 .article > div {
     padding: 15px;
+}
+
+.article-footer {
+    padding: 5px !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .small-box-footer {

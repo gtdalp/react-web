@@ -54,9 +54,10 @@ var colorStyle = [
 var ArticleItem = React.createClass({
   render: function () {
     var lis = this.props.items.map(function (item) {
-      var backColor = round(colorStyle);
-      return <div className="article animated slideInUp" style={{'border-color':backColor+' !important'}}>
-        <div className="article-title" style={{'border-color':backColor+' !important'}}>{item.title}
+//      var backColor = '#FC9D41';//round(colorStyle);
+//      style={{'border-top-color':round(colorStyle)+' !important'}}
+      return <div className="article animated slideInUp">
+        <div className="article-title" >{item.title}
           <div className="article-title-time">
             <i className="fa fa-clock-o"></i>
             <span>
@@ -70,9 +71,10 @@ var ArticleItem = React.createClass({
           </p>
         </div>
         <i className={"fa fa-icons "+ round(icons)}></i>
-        <a href="#" className={"small-box-footer"} style={{'background':round(colorStyle)+' !important'}}>More info
-          <i className="fa fa-arrow-circle-right"></i>
-        </a>
+
+        <div className="article-footer">
+          <a href="#">More info <i className="fa fa-arrow-circle-right"></i> </a>
+        </div>
       </div>;
     });
 
@@ -117,11 +119,12 @@ var Content = React.createClass({
           <p className="text-muted text-center">Web/Nodejs/React/Angular coder</p>
 
           <p className="text-muted text-center">据说玩github逼格较高，所以呢~</p>
-          <a href="#" className="project-primary"><b>react-web</b></a>
-          <a href="#" className="project-primary"><b>ng-web</b></a>
-          <a href="#" className="project-primary"><b>gulp-requirejs-combine</b></a>
-          <a href="#" className="project-primary"><b>gulp-folder</b></a>
-          <a href="#" className="project-primary"><b>ngMessage</b></a>
+          <a href="https://github.com/microlv/react-web" className="project-primary"><b>react-web</b></a>
+          <a href="https://github.com/microlv/ng-web" className="project-primary"><b>ng-web</b></a>
+          <a href="https://github.com/microlv/gulp-requirejs-combine" className="project-primary"><b>gulp-requirejs-combine</b></a>
+          <a href="https://github.com/microlv/gulp-ng-template-html" className="project-primary"><b>gulp-ng-template-html</b></a>
+          <a href="https://github.com/microlv/gulp-folder" className="project-primary"><b>gulp-folder</b></a>
+          <a href="https://github.com/microlv/ngMessage" className="project-primary"><b>ngMessage</b></a>
 
         </div>
         <div id="sidebar"></div>
