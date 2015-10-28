@@ -18,15 +18,33 @@
   });
 
   var PostArticleSelector = React.createClass({
+    accept: function () {
+      $.ajax({
+        url: '/api/saveArticle',
+        data: {
+          title: React.findDOMNode(this.refs.title).value,
+          category: React.findDOMNode(this.refs.category).value,
+          content: $('#markdown-control').val(),
+          origin: true
+        }
+      }).then(function (response) {
+        console.log(response);
+      }.bind(this));
+    },
+    cancel: function () {
+
+    },
     getInitialState: function () {
-      return {items: []};
+      return {
+        categoryItems: []
+      };
     },
     componentDidMount: function () {
       this.fetchData();
     },
     fetchData: function () {
       $.get('/api/getCategory').then(function (response) {
-        this.setState({items: response.data});
+        this.setState({categoryItems: response.data});
       }.bind(this));
     },
     render: function () {
@@ -41,17 +59,21 @@
                 <form role="form">
                   <div className="form-group">
                     <label>Title</label>
-                    <input type="text" className="form-control" placeholder="Enter ..."/>
+                    <input type="text" className="form-control" placeholder="Enter ..." ref="title"/>
                   </div>
 
                   <div className="form-group">
                     <label>Select</label>
-                    <PostCategorySelector items={this.state.items}/>
+                    <PostCategorySelector items={this.state.categoryItems} ref="category"/>
                   </div>
 
                   <div className="form-group">
                     <label>Content</label>
                     <MarkdownSelector/>
+                  </div>
+                  <div>
+                    <button className="btn bg-orange btn-flat margin" onClick={this.accept}>Accept</button>
+                    <button className="btn bg-orange btn-flat margin" onClick={this.cancel}>Cancel</button>
                   </div>
                 </form>
               </div>
