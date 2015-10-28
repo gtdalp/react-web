@@ -15,6 +15,10 @@
     return this;
   };
 
+  String.prototype.toFormatLocaleString = function () {
+    return new Date(this).toLocaleString();
+  };
+
   React.component = {};
 
 })();

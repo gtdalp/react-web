@@ -11,5 +11,6 @@ module.exports = {
   //article
   getArticleCount: article.getArticleCount,
   getArticleList: article.getArticleList,
-  getArticleByCategoryId: article.getArticleByCategoryId
+  getArticleByCategoryId: article.getArticleByCategoryId,
+  getArticleDetailById: article.getArticleDetailById
 };

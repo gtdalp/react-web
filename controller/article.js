@@ -1,6 +1,7 @@
 'use strict';
 
 var dao = require('../dao');
+var ObjectId = require('mongodb').ObjectId;
 
 function getArticleCount(req, res) {
   dao.getArticleCount().then(function (data) {
@@ -38,8 +39,21 @@ function getArticleByCategoryId(req, res) {
   });
 }
 
+
+function getArticleDetailById(req, res) {
+  dao.getArticleDetailById({_id: ObjectId(req.params.id)}).then(function (data) {
+    var obj = {code: '10086', msg: 'failed'};
+    if (data) {
+      obj.code = '8000';
+      obj.data = data;
+      obj.msg = 'success';
+    }
+    res.send(obj);
+  });
+}
 module.exports = {
   getArticleCount: getArticleCount,
   getArticleList: getArticleList,
-  getArticleByCategoryId: getArticleByCategoryId
+  getArticleByCategoryId: getArticleByCategoryId,
+  getArticleDetailById: getArticleDetailById
 };

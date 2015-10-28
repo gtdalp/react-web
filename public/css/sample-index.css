@@ -7,13 +7,13 @@ body > div {
     height: 100%;
 }
 
-body a,span {
+body a, span {
     text-decoration: none !important;
 }
 
 footer {
     background-color: #222d32;
-    border-top: 3px solid #f29b12;
+    border-top: 3px solid #0177B5;
     height: 45px;
     width: 100%;
     position: fixed;
@@ -24,6 +24,7 @@ footer {
 
 .profile-info {
     background-color: #ebeff4;
+    z-index: 9999999;
 }
 
 .profile-info-detail {
@@ -50,7 +51,7 @@ footer {
     border-bottom: 2px solid #00bfee;
     position: relative;
     color: #FFF;
-    padding: 0 0 0 20px;
+    padding: 0 20px;
 }
 
 .img-box > div {
@@ -65,6 +66,17 @@ footer {
     padding: 3px;
 }
 
+/*@media (min-width: 768px) {*/
+/*.img-box > div{*/
+/*left: 36%;*/
+/*}*/
+/*}*/
+
+/*@media (max-width: 768px) {*/
+/*.img-box > div{*/
+/*left: 50%;*/
+/*}*/
+/*}*/
 .img-circle {
     border-radius: 50%;
     height: 110px;
@@ -72,13 +84,13 @@ footer {
 }
 
 .article {
-    border: 1px solid #0099be;
+    border: 1px solid #ccc;
     border-radius: 5px;
     margin: 20px 0;
 }
 
 .article-title {
-    border-top: 3px solid #0099be;
+    border-top: 3px solid #FC9D41;
     border-radius: 3px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
@@ -89,7 +101,6 @@ footer {
 
 .article-title > div {
     float: right;
-    background-color:;
     color: #777
 }
 
@@ -104,6 +115,11 @@ footer {
 
 .article > div {
     padding: 15px;
+}
+
+.article-footer {
+    padding: 5px !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .small-box-footer {
@@ -123,4 +139,21 @@ footer {
     right: 16px;
     top: 44%;
     color: #DBDBDB;
+}
+
+.project-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.project-primary:hover {
+    color: #00beed;
+    background-color: #3072ac;
+    border-color: #245581;
 }

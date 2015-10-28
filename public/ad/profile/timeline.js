@@ -44,13 +44,13 @@
       return <div className="timeline-item">
         <span className="time"><i className="fa fa-clock-o"></i>{item.date.toLocaleTimeString()}</span>
 
-        <h3 className="timeline-header"><a href="#">{item.title}</a>{item.origin}</h3>
+        <h3 className="timeline-header"><a href={"#/articledetail/"+item._id}>{item.title}</a>{item.origin}</h3>
 
         <div className="timeline-body">
           {item.content}...
         </div>
         <div className="timeline-footer">
-          <a className="btn btn-primary btn-xs">Read more</a>
+          <a href={"#/articledetail/"+item._id} className="btn btn-primary btn-xs">Read more</a>
         </div>
       </div>;
     },
