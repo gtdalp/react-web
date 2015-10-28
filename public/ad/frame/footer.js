@@ -13,6 +13,7 @@
       </footer>;
     }
   });
-  React.component.FooterSelector = FooterSelector;
+
+  component.FooterSelector = FooterSelector;
 
 })();

@@ -81,7 +81,7 @@
     }
   });
 
-  React.component.NavigatorSelector = NavigatorSelector;
-  React.component.SideBarSelector = SideBarSelector;
+  component.NavigatorSelector = NavigatorSelector;
+  component.SideBarSelector = SideBarSelector;
 
 })();

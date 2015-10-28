@@ -45,5 +45,6 @@
       </header>;
     }
   });
-  React.component.HeaderSelector = HeaderSelector;
+
+  component.HeaderSelector = HeaderSelector;
 })();

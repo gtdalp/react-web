@@ -27,7 +27,7 @@
     }
   });
 
-  React.component.NavMapSelector = NavMapSelector;
+  component.NavMapSelector = NavMapSelector;
 
 //  function render() {
 //    React.render(<)

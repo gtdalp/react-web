@@ -6,15 +6,15 @@
   var DefaultRoute = ReactRouter.DefaultRoute;
   var NotFoundRoute = ReactRouter.NotFoundRoute;
 
-  var TimelineSelector = React.component.TimelineSelector;
-  var ProfileSelector = React.component.ProfileSelector;
-  var PostArticleSelector = React.component.PostArticleSelector;
-  var ArticleDetailSelector = React.component.ArticleDetailSelector;
-  var Error500 = React.component.Error500;
-  var HeaderSelector = React.component.HeaderSelector;
-  var SideBarSelector = React.component.SideBarSelector;
-  var FooterSelector = React.component.FooterSelector;
-  var NavMapSelector = React.component.NavMapSelector;
+  var TimelineSelector = component.TimelineSelector;
+  var ProfileSelector = component.ProfileSelector;
+  var PostArticleSelector = component.PostArticleSelector;
+  var ArticleDetailSelector = component.ArticleDetailSelector;
+  var Error500 = component.Error500;
+  var HeaderSelector = component.HeaderSelector;
+  var SideBarSelector = component.SideBarSelector;
+  var FooterSelector = component.FooterSelector;
+  var NavMapSelector = component.NavMapSelector;
 
   var ContentSelector = React.createClass({
     render: function () {

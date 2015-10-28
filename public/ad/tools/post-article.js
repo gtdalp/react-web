@@ -3,7 +3,7 @@
  */
 (function () {
   'use strict';
-  var MarkdownSelector = React.component.MarkdownSelector;
+  var MarkdownSelector = component.MarkdownSelector;
 
   var PostCategorySelector = React.createClass({
     render: function () {
@@ -21,6 +21,7 @@
     accept: function () {
       $.ajax({
         url: '/api/saveArticle',
+        type: 'POST',
         data: {
           title: React.findDOMNode(this.refs.title).value,
           category: React.findDOMNode(this.refs.category).value,
@@ -28,11 +29,14 @@
           origin: true
         }
       }).then(function (response) {
-        console.log(response);
+
       }.bind(this));
     },
     cancel: function () {
-
+      service.showDialog();
+//      React.findDOMNode(this.refs.title).value = '';
+//      React.findDOMNode(this.refs.category).value = '';
+//      $('#markdown-control').val('');
     },
     getInitialState: function () {
       return {
@@ -84,6 +88,6 @@
     }
   });
 
-  React.component.PostArticleSelector = PostArticleSelector;
+  component.PostArticleSelector = PostArticleSelector;
 
 })();

@@ -22,7 +22,7 @@
   });
 //  <div id="epiceditor" className="markdown-control"></div>
 
-  React.component.MarkdownSelector = MarkdownSelector;
+  component.MarkdownSelector = MarkdownSelector;
 
 
 })();

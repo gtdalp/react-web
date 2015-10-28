@@ -58,6 +58,6 @@
     }
   });
 
-  React.component.ArticleDetailSelector = ArticleDetailSelector;
+  component.ArticleDetailSelector = ArticleDetailSelector;
 
 })();

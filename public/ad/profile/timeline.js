@@ -109,10 +109,9 @@
     }
   });
 
-  React.component.TimelineSelector = TimelineSelector;
-
   function round(t) {
     return t[parseInt(Math.random(t.length) * 10)];
   }
 
+  component.TimelineSelector = TimelineSelector;
 })();
