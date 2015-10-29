@@ -16,6 +16,6 @@
     }
   });
 
-  React.component.Error500 = Error500;
+  component.Error500 = Error500;
 
 })();

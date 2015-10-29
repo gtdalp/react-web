@@ -104,7 +104,11 @@ body > div {
 }
 
 .markdown-control {
-    min-height: 500px;
+    min-height: 450px;
+    width: 100%;
+    /*height: 400px;*/
+    font-size: 14px;
+    line-height: 18px;
 }
 
 .user-footer {
@@ -114,3 +118,4 @@ body > div {
 .user-footer a {
     margin: 0 3px;
 }
+

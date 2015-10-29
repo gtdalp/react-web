@@ -72,7 +72,7 @@
     }
   });
 
-  React.component.ProfileSelector = ProfileSelector;
+  component.ProfileSelector = ProfileSelector;
 
 //  React.registerComponent('ProfileSelector', <ProfileSelector/>);
   // React.render(<ProfileSelector />, document.getElementById('content'));

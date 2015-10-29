@@ -15,6 +15,7 @@ router.get('/test', function (req, res) {
 //admin
 //post
 router.post('/signIn', controller.signIn);
+router.post('/saveArticle', controller.saveArticle);
 
 //get
 router.get('/getCategory', controller.getCategory);

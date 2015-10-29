@@ -52,9 +52,18 @@ function getArticleDetailById(obj) {
   return d.promise;
 }
 
+function saveArticle(obj) {
+  var d = q.defer();
+  mongo.collection('Article').insert(obj, function (err, data) {
+    err ? d.reject(err) : d.resolve(data);
+  });
+  return d.promise;
+}
+
 module.exports = {
   getArticleCount: getArticleCount,
   getArticleList: getArticleList,
   getArticleByCategoryId: getArticleByCategoryId,
-  getArticleDetailById: getArticleDetailById
+  getArticleDetailById: getArticleDetailById,
+  saveArticle: saveArticle
 };

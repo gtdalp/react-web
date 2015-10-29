@@ -1,4 +1,4 @@
-(function () {
+(function (root) {
   'use strict';
 
   String.prototype.toLocaleDateString = function () {
@@ -19,6 +19,7 @@
     return new Date(this).toLocaleString();
   };
 
-  React.component = {};
+  root.component = {};
+  root.service = {};
 
-})();
+})(this);
