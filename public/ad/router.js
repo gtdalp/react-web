@@ -31,16 +31,6 @@
   });
 
   var App = React.createClass({
-//    scrollBehavior: ReactRouter.ScrollToTopBehavior,
-//    statics: {
-//      willTransitionTo: function (transition, params, query, callback) {
-//        console.log('app willTransitionTo');
-//        callback();
-//      },
-//      willTransitionFrom: function (transition, component) {
-//        console.log('app willTransitionFrom');
-//      }
-//    },
     render: function () {
       return (
         <div className="wrapper">
