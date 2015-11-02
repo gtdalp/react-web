@@ -12,7 +12,12 @@
 //          editor: '/editor/epic-dark.css'
 //        }
 //      }).load();
-      $('#markdown-control').wysihtml5();
+      var markdown = $('#markdown-control');
+      markdown.wysihtml5();
+
+//      if (this.props.defaultVale) {
+//        markdown.data('wysihtml5').editor.setValue(this.props.defaultVale);
+//      }
     },
     render: function () {
       return <div>
