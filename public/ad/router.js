@@ -51,6 +51,7 @@
     <Route name='timeline' path="timeline/:categoryId" handler={TimelineSelector}/>
     <Route name='postarticle' path="postarticle" handler={PostArticleSelector}/>
     <Route name='articledetail' path="articledetail/:id" handler={ArticleDetailSelector}/>
+    <Route name='editdetail' path="editdetail/:id" handler={PostArticleSelector}/>
 
     <NotFoundRoute handler={Error500}/>
   </Route>, ReactRouter.HashLocation, function (Root) {

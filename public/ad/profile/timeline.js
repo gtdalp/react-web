@@ -41,6 +41,7 @@
       </div>;
     },
     timeItem: function (item) {
+      item.right = true;
       return <div className="timeline-item">
         <span className="time"><i className="fa fa-clock-o"></i>{item.date.toLocaleTimeString()}</span>
 
@@ -51,6 +52,7 @@
         </div>
         <div className="timeline-footer">
           <a href={"#/articledetail/"+item._id} className="btn btn-primary btn-xs">Read more</a>
+          <a href={"#/editdetail/"+item._id} className={"btn btn-primary btn-xs "+item.right}>Edit</a>
         </div>
       </div>;
     },

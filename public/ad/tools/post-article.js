@@ -40,7 +40,8 @@
     },
     getInitialState: function () {
       return {
-        categoryItems: []
+        categoryItems: [],
+        detail: {}
       };
     },
     componentDidMount: function () {
@@ -49,7 +50,18 @@
     fetchData: function () {
       $.get('/api/getCategory').then(function (response) {
         this.setState({categoryItems: response.data});
+        if (this.props.params.id) {
+          $.get('/api/getArticleDetailById/' + id).then(function (response) {
+            var data = response.data;
+            data.date = data.date.toFormatLocaleString();
+
+            this.setState({
+              detail: data
+            });
+          }.bind(this));
+        }
       }.bind(this));
+
     },
     render: function () {
       return <section className="content">
@@ -63,17 +75,18 @@
                 <form role="form">
                   <div className="form-group">
                     <label>Title</label>
-                    <input type="text" className="form-control" placeholder="Enter ..." ref="title"/>
+                    <input type="text" className="form-control" placeholder="Enter ..." ref="title" val={this.state.detail.title}/>
                   </div>
 
                   <div className="form-group">
                     <label>Select</label>
-                    <PostCategorySelector items={this.state.categoryItems} ref="category"/>
+                    <PostCategorySelector items={this.state.categoryItems} detail={this.props.params.id}
+                                          ref="category"/>
                   </div>
 
                   <div className="form-group">
                     <label>Content</label>
-                    <MarkdownSelector/>
+                    <MarkdownSelector content={this.state.detail.content}/>
                   </div>
                   <div>
                     <button className="btn bg-orange btn-flat margin" onClick={this.accept}>Accept</button>
