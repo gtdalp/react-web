@@ -53,6 +53,7 @@ function getArticleDetailById(req, res) {
 
 function saveArticle(req, res) {
   dao.saveArticle({
+    "_id": req.body._id,
     "category": req.body.category,
     "authorId": 1,
     "title": req.body.title,

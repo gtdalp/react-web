@@ -4,7 +4,7 @@
   var MarkdownSelector = React.createClass({
     componentDidUpdate: function () {
       if (this.props.content) {
-        markdown.data('wysihtml5').editor.setValue(this.props.content);
+        $('#markdown-control').data('wysihtml5').editor.setValue(this.props.content);
       }
     },
     componentDidMount: function () {

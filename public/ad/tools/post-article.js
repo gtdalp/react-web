@@ -4,12 +4,17 @@
 (function () {
   'use strict';
   var MarkdownSelector = component.MarkdownSelector;
-  var urlCategory = '';
-
+  //var urlCategory = '';
+  var _id;
   var PostCategorySelector = React.createClass({
     componentDidUpdate: function () {
-      if (this.props.category) {
-        React.findDOMNode(this.refs.category).value=this.props.category;
+      var category = this.props.category;
+      var index = 0;
+      if (category) {
+        index = _.findIndex(this.props.items, function (k) {
+          return category === k._id;
+        });
+        this.getDOMNode().selectedIndex = ++index;
       }
     },
     render: function () {
@@ -32,6 +37,7 @@
         url: '/api/saveArticle',
         type: 'POST',
         data: {
+          _id: !!_id ? _id : '',
           title: React.findDOMNode(this.refs.title).value,
           category: React.findDOMNode(this.refs.category).value,
           content: $('#markdown-control').val(),
@@ -60,8 +66,8 @@
       $.get('/api/getCategory').then(function (response) {
         this.setState({categoryItems: response.data});
         if (this.props.params.id) {
-          urlCategory = this.props.params.id;
-          $.get('/api/getArticleDetailById/' + urlCategory).then(function (response) {
+          _id = this.props.params.id;
+          $.get('/api/getArticleDetailById/' + _id).then(function (response) {
             var data = response.data;
             data.date = data.date.toFormatLocaleString();
 
@@ -86,12 +92,13 @@
                   <div className="form-group">
                     <label>Title</label>
                     <input type="text" className="form-control" placeholder="Enter ..." ref="title"
-                           val={this.state.detail.title}/>
+                           value={this.state.detail.title}/>
                   </div>
 
                   <div className="form-group">
                     <label>Select</label>
-                    <PostCategorySelector items={this.state.categoryItems} ref="category" category={this.state.detail.category}/>
+                    <PostCategorySelector items={this.state.categoryItems} ref="category"
+                                          category={this.state.detail.category}/>
                   </div>
 
                   <div className="form-group">
