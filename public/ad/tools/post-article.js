@@ -44,7 +44,10 @@
           origin: true
         }
       }).then(function (response) {
-
+        if (response.code === '8000') {
+          window.location.href = '/admin';
+          //          this.transitionTo('/');
+        }
       }.bind(this));
     },
     cancel: function () {

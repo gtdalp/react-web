@@ -55,20 +55,23 @@ function getArticleDetailById(obj) {
 function saveArticle(obj) {
   var d = q.defer();
   var collect = mongo.collection('Article');
+
+  var visitCount = (obj.visitCount ? obj.visitCount : 0) + 1;
+  var save = {
+    "category": obj.category,
+    "title": obj.title,
+    "content": obj.content,
+    "visitCount": visitCount,
+    "origin": obj.origin,
+    "date": new Date()
+  };
+
   if (obj._id) {
-    var visitCount = ++obj.visitCount;
-    collect.update({_id: ObjectId(obj._id)}, {
-      "category": obj.category,
-      "title": obj.title,
-      "content": obj.content,
-      "visitCount": visitCount,
-      "origin": obj.origin,
-      "date": new Date()
-    }, function (err, data) {
+    collect.update({_id: ObjectId(obj._id)}, save, function (err, data) {
       err ? d.reject(err) : d.resolve(data);
     });
   } else {
-    collect.insert(obj, function (err, data) {
+    collect.insert(save, function (err, data) {
       err ? d.reject(err) : d.resolve(data);
     });
   }
