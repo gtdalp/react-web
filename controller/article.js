@@ -28,31 +28,34 @@ function getArticleList(req, res) {
 }
 
 function getArticleByCategoryId(req, res) {
-  dao.getArticleByCategoryId({category: req.params.categoryId}).then(function (data) {
-    var obj = {code: '10086', msg: 'failed'};
-    if (data) {
-      obj.code = '8000';
-      obj.data = data;
-      obj.msg = 'success';
-    }
-    res.send(obj);
-  });
+  dao.getArticleByCategoryId({category: req.params.categoryId})
+    .then(function (data) {
+      var obj = {code: '10086', msg: 'failed'};
+      if (data) {
+        obj.code = '8000';
+        obj.data = data;
+        obj.msg = 'success';
+      }
+      res.send(obj);
+    });
 }
 
 function getArticleDetailById(req, res) {
-  dao.getArticleDetailById({_id: ObjectId(req.params.id)}).then(function (data) {
-    var obj = {code: '10086', msg: 'failed'};
-    if (data) {
-      obj.code = '8000';
-      obj.data = data;
-      obj.msg = 'success';
-    }
-    res.send(obj);
-  });
+  dao.getArticleDetailById({_id: ObjectId(req.params.id)})
+    .then(function (data) {
+      var obj = {code: '10086', msg: 'failed'};
+      if (data) {
+        obj.code = '8000';
+        obj.data = data;
+        obj.msg = 'success';
+      }
+      res.send(obj);
+    });
 }
 
 function saveArticle(req, res) {
   dao.saveArticle({
+    "_id": req.body._id,
     "category": req.body.category,
     "authorId": 1,
     "title": req.body.title,

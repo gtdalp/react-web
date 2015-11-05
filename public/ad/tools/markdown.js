@@ -2,6 +2,11 @@
   'use strict';
 
   var MarkdownSelector = React.createClass({
+    componentDidUpdate: function () {
+      if (this.props.content) {
+        $('#markdown-control').data('wysihtml5').editor.setValue(this.props.content);
+      }
+    },
     componentDidMount: function () {
 //      var editor = new EpicEditor({
 //        container: 'epiceditor',
@@ -15,9 +20,7 @@
       var markdown = $('#markdown-control');
       markdown.wysihtml5();
 
-//      if (this.props.defaultVale) {
-//        markdown.data('wysihtml5').editor.setValue(this.props.defaultVale);
-//      }
+
     },
     render: function () {
       return <div>

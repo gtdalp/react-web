@@ -3,7 +3,7 @@
 var mongo = require('./mongo');
 var q = require('q');
 var _ = require('lodash');
-
+var ObjectId = require('mongodb').ObjectId;
 function getArticleCount() {
   var d = q.defer();
   mongo.collection('Article').aggregate(
@@ -54,9 +54,28 @@ function getArticleDetailById(obj) {
 
 function saveArticle(obj) {
   var d = q.defer();
-  mongo.collection('Article').insert(obj, function (err, data) {
-    err ? d.reject(err) : d.resolve(data);
-  });
+  var collect = mongo.collection('Article');
+
+  var visitCount = (obj.visitCount ? obj.visitCount : 0) + 1;
+  var save = {
+    "category": obj.category,
+    "title": obj.title,
+    "content": obj.content,
+    "visitCount": visitCount,
+    "origin": obj.origin,
+    "date": new Date()
+  };
+
+  if (obj._id) {
+    collect.update({_id: ObjectId(obj._id)}, save, function (err, data) {
+      err ? d.reject(err) : d.resolve(data);
+    });
+  } else {
+    collect.insert(save, function (err, data) {
+      err ? d.reject(err) : d.resolve(data);
+    });
+  }
+
   return d.promise;
 }
 

@@ -4,13 +4,27 @@
 (function () {
   'use strict';
   var MarkdownSelector = component.MarkdownSelector;
-
+  //var urlCategory = '';
+  var _id;
   var PostCategorySelector = React.createClass({
+    componentDidUpdate: function () {
+      var category = this.props.category;
+      var index = 0;
+      if (category) {
+        index = _.findIndex(this.props.items, function (k) {
+          return category === k._id;
+        });
+        this.getDOMNode().selectedIndex = ++index;
+      }
+    },
     render: function () {
       var lis = this.props.items.map(function (item) {
         return <option value={item._id}>{item.name}</option>;
       });
-      lis.unshift(<option value="0">Please Select A Category!</option>)
+      lis.unshift(<option value="0">Please Select A Category!</option>);
+//      if (urlCategory) {
+//        React.findDOMNode(this).value = urlCategory;
+//      }
       return <select className="form-control">
         {lis}
       </select>;
@@ -23,13 +37,17 @@
         url: '/api/saveArticle',
         type: 'POST',
         data: {
+          _id: !!_id ? _id : '',
           title: React.findDOMNode(this.refs.title).value,
           category: React.findDOMNode(this.refs.category).value,
           content: $('#markdown-control').val(),
           origin: true
         }
       }).then(function (response) {
-
+        if (response.code === '8000') {
+          window.location.href = '/admin';
+          //          this.transitionTo('/');
+        }
       }.bind(this));
     },
     cancel: function () {
@@ -51,7 +69,8 @@
       $.get('/api/getCategory').then(function (response) {
         this.setState({categoryItems: response.data});
         if (this.props.params.id) {
-          $.get('/api/getArticleDetailById/' + id).then(function (response) {
+          _id = this.props.params.id;
+          $.get('/api/getArticleDetailById/' + _id).then(function (response) {
             var data = response.data;
             data.date = data.date.toFormatLocaleString();
 
@@ -75,13 +94,14 @@
                 <form role="form">
                   <div className="form-group">
                     <label>Title</label>
-                    <input type="text" className="form-control" placeholder="Enter ..." ref="title" val={this.state.detail.title}/>
+                    <input type="text" className="form-control" placeholder="Enter ..." ref="title"
+                           value={this.state.detail.title}/>
                   </div>
 
                   <div className="form-group">
                     <label>Select</label>
-                    <PostCategorySelector items={this.state.categoryItems} detail={this.props.params.id}
-                                          ref="category"/>
+                    <PostCategorySelector items={this.state.categoryItems} ref="category"
+                                          category={this.state.detail.category}/>
                   </div>
 
                   <div className="form-group">
