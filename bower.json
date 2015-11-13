@@ -42,6 +42,7 @@
     "lodash": "~3.10.1",
     "q": "~2.0.2",
     "react": "~0.13.3",
-    "react-router": "~0.13.3"
+    "react-router": "~0.13.3",
+    "requirejs": "~2.1.20"
   }
 }
