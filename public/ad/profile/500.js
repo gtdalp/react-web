@@ -1,21 +1,20 @@
-(function () {
-  'use strict';
+'use strict';
 
-  var Error500 = React.createClass({
-    render: function () {
-      return <section className="content">
-        <div className="error-page">
-          <h2 className="headline text-red">500</h2>
+var Error500 = React.createClass({
+  render: function () {
+    return <section className="content">
+      <div className="error-page">
+        <h2 className="headline text-red">500</h2>
 
-          <div className="error-content">
-            <h3><i className="fa fa-warning text-red"></i> Oops! Something went wrong.</h3>
+        <div className="error-content">
+          <h3><i className="fa fa-warning text-red"></i> Oops! Something went wrong.</h3>
 
-          </div>
         </div>
-      </section>;
-    }
-  });
+      </div>
+    </section>;
+  }
+});
 
-  component.Error500 = Error500;
+//  component.Error500 = Error500;
 
-})();
+export var Error500;
