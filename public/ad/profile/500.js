@@ -1,8 +1,8 @@
 'use strict';
 
-var ReactDom = require('react-dom');
+var React = require('react');
 
-var Error500 = ReactDom.createClass({
+var Error500 = React.createClass({
   render: function () {
     return <section className="content">
       <div className="error-page">

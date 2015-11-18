@@ -1,8 +1,8 @@
 'use strict';
 
-var ReactDom = require('react-dom');
+var React = require('react');
 
-var MarkdownSelector = ReactDom.createClass({
+var MarkdownSelector = React.createClass({
   componentDidUpdate: function () {
     if (this.props.content) {
       $('#markdown-control').data('wysihtml5').editor.setValue(this.props.content);

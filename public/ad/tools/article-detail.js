@@ -1,8 +1,8 @@
 'use strict';
 
-var ReactDom = require('react-dom');
+var React = require('react');
 
-var ArticleDetailSelector = ReactDom.createClass({
+var ArticleDetailSelector = React.createClass({
   getInitialState: function () {
     return {
       detail: {}

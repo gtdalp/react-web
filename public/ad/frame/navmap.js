@@ -1,8 +1,8 @@
 'use strict';
 
-var ReactDom = require('react-dom');
+var React = require('react');
 
-var NavMapSelector = ReactDom.createClass({
+var NavMapSelector = React.createClass({
   getInitialState: function () {
     return {
       category: '',

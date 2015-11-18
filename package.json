@@ -12,6 +12,7 @@
     "ejs": "~2.3.3",
     "express": "~4.13.1",
     "express-session": "^1.12.1",
+    "history": "^1.13.1",
     "lodash": "^3.10.1",
     "mongodb": "^2.0.48",
     "mongoskin": "^2.0.3",

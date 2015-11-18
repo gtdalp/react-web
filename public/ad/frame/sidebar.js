@@ -1,8 +1,8 @@
 'use strict';
 
-var ReactDom = require('react-dom');
+var React = require('react');
 
-var NavigatorItemSelector = ReactDom.createClass({
+var NavigatorItemSelector = React.createClass({
 
   render: function () {
     var lis = this.props.items.map(function (item) {
@@ -29,7 +29,7 @@ var NavigatorItemSelector = ReactDom.createClass({
   }
 });
 
-var NavigatorSelector = ReactDom.createClass({
+var NavigatorSelector = React.createClass({
   getInitialState: function () {
     return {items: []};
   },
@@ -58,7 +58,7 @@ var NavigatorSelector = ReactDom.createClass({
   }
 });
 
-var SideBarSelector = ReactDom.createClass({
+var SideBarSelector = React.createClass({
   render: function () {
     return <aside className="main-sidebar">
       <section className="sidebar">

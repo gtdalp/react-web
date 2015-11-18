@@ -1,8 +1,8 @@
 'use strict';
 
-var ReactDom = require('react-dom');
+var React = require('react');
 
-var HeaderSelector = ReactDom.createClass({
+var HeaderSelector = React.createClass({
   render: function () {
     return <header className="main-header">
       <nav className="navbar navbar-static-top" role="navigation">

@@ -1,8 +1,8 @@
 ﻿'use strict';
 
-var ReactDom = require('react-dom');
+var React = require('react');
 
-var ProfileSelector = ReactDom.createClass({
+var ProfileSelector = React.createClass({
   render: function () {
     return <section className="content row">
       <div className="col-md-3">
