@@ -1,6 +1,8 @@
 'use strict';
 
-var Error500 = React.createClass({
+var ReactDom = require('react-dom');
+
+var Error500 = ReactDom.createClass({
   render: function () {
     return <section className="content">
       <div className="error-page">
@@ -17,4 +19,4 @@ var Error500 = React.createClass({
 
 //  component.Error500 = Error500;
 
-export var Error500;
+module.exports = Error500;

@@ -1,6 +1,7 @@
 'use strict';
+var ReactDOM = require('react-dom');
 
-var FooterSelector = React.createClass({
+var FooterSelector = ReactDOM.createClass({
   render: function () {
     return <footer className="main-footer">
       <div className="pull-right hidden-xs">
@@ -15,4 +16,4 @@ var FooterSelector = React.createClass({
 
 //component.FooterSelector = FooterSelector;
 
-export var FooterSelector;
+module.exports = FooterSelector;

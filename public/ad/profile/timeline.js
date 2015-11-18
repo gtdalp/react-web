@@ -1,5 +1,7 @@
 'use strict';
 
+var ReactDom = require('react-dom');
+
 var colors = [
   'bg-red,',
   'bg-yellow',
@@ -30,7 +32,7 @@ var icons = [
   'fa-cogs'
 ];
 
-var TimeLineItemSelector = React.createClass({
+var TimeLineItemSelector = ReactDom.createClass({
   timeLabel: function (item) {
     return <div className="time-label">
         <span className={round(colors)}>
@@ -70,7 +72,7 @@ var TimeLineItemSelector = React.createClass({
   }
 });
 
-var TimelineSelector = React.createClass({
+var TimelineSelector = ReactDom.createClass({
   statics: {
     willTransitionTo: function (transition, params, query, callback) {
       console.log('app willTransitionTo');
@@ -116,4 +118,4 @@ function round(t) {
 
 //  component.TimelineSelector = TimelineSelector;
 
-export var TimelineSelector
+module.exports = TimelineSelector

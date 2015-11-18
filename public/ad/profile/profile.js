@@ -1,6 +1,8 @@
 ﻿'use strict';
 
-var ProfileSelector = React.createClass({
+var ReactDom = require('react-dom');
+
+var ProfileSelector = ReactDom.createClass({
   render: function () {
     return <section className="content row">
       <div className="col-md-3">
@@ -73,4 +75,4 @@ var ProfileSelector = React.createClass({
 
 //  component.ProfileSelector = ProfileSelector;
 
-export var ProfileSelector;
+module.exports =ProfileSelector;

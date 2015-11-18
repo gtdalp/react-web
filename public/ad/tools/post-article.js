@@ -1,8 +1,9 @@
 'use strict';
-import {MarkdownSelector} from './markdown';
+var ReactDom = require('react-dom');
+var MarkdownSelector = require('./markdown');
 
 var _id;
-var PostCategorySelector = React.createClass({
+var PostCategorySelector = ReactDom.createClass({
   componentDidUpdate: function () {
     var category = this.props.category;
     var index = 0;
@@ -27,7 +28,7 @@ var PostCategorySelector = React.createClass({
   }
 });
 
-var PostArticleSelector = React.createClass({
+var PostArticleSelector = ReactDom.createClass({
   accept: function () {
     $.ajax({
       url: '/api/saveArticle',
@@ -117,6 +118,7 @@ var PostArticleSelector = React.createClass({
   }
 });
 
-//  component.PostArticleSelector = PostArticleSelector;
-export var PostCategorySelector;
-export var PostArticleSelector;
+module.exports = {
+  PostCategorySelector: PostCategorySelector,
+  PostArticleSelector: PostArticleSelector
+};

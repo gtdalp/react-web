@@ -1,6 +1,8 @@
 'use strict';
 
-var NavMapSelector = React.createClass({
+var ReactDom = require('react-dom');
+
+var NavMapSelector = ReactDom.createClass({
   getInitialState: function () {
     return {
       category: '',
@@ -26,4 +28,4 @@ var NavMapSelector = React.createClass({
   }
 });
 
-export var NavMapSelector;
+module.exports = NavMapSelector;

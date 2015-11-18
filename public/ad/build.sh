@@ -1,0 +1,1 @@
+browserify -t [ babelify --presets [ react ] ] router.js -o bundle.js

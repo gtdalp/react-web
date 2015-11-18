@@ -1,6 +1,8 @@
 'use strict';
 
-var ArticleDetailSelector = React.createClass({
+var ReactDom = require('react-dom');
+
+var ArticleDetailSelector = ReactDom.createClass({
   getInitialState: function () {
     return {
       detail: {}
@@ -59,4 +61,4 @@ var ArticleDetailSelector = React.createClass({
 
 //component.ArticleDetailSelector = ArticleDetailSelector;
 
-export var ArticleDetailSelector;
+module.exports = ArticleDetailSelector;
